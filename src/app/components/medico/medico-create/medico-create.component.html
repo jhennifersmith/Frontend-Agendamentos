@@ -1,0 +1,48 @@
+<mat-card>
+  <mat-card-title>Novo Médico</mat-card-title>
+  <form [formGroup]="medicoFormGroup">
+    <div class="medico-cadastro">
+      <div formGroupName="pessoa">
+        <mat-form-field>
+          <input matInput placeholder="Nome" id="nome" formControlName="nome" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Data de Nascimento" id="dataNascimento" formControlName="dataNascimento" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Sexo" id="sexo" formControlName="sexo" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="CPF" id="cpf" formControlName="cpf" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Altura" id="altura" formControlName="altura" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Peso" id="peso" formControlName="peso" />
+        </mat-form-field>
+      </div>
+      <mat-form-field>
+        <input matInput id="crm" placeholder="CRM" formControlName="crm" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput id="dataCriacao" placeholder="Data de Criação" formControlName="dataCriacao" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput id="Data de exclusão" placeholder="Data de Exclusão" formControlName="dataExclusao" />
+      </mat-form-field>
+
+    </div>
+  </form>
+  <div class="buttons">
+    <button mat-raised-button (click)="createMedico()">
+      Salvar
+    </button>
+    <!--ngsubmit-->
+    <button mat-raised-button (click)="cancel()">
+      Cancelar
+    </button>
+  </div>
+
+</mat-card>

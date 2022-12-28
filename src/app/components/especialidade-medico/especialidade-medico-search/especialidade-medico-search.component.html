@@ -1,0 +1,44 @@
+<mat-card>
+    <mat-card-title>Filtrar Especialidade</mat-card-title>
+    <form [formGroup]="especialidadeMedicoFormGroup">
+        <div class="array-idMedico">
+            <div formArrayName="idMedicos">
+                <ng-container *ngFor="let item of idMedico.controls; let indiceIdMedico = index">
+                    <div [formGroupName]="indiceIdMedico">
+                        <input formControlName="idMedico" />
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="idMedico.controls.length === 0">
+                </ng-container>
+            </div>
+        </div>
+        <mat-form-field>
+            <input #input matInput type="text" placeholder="Id Médico" />
+        </mat-form-field>
+        <button mat-raised-button (click)="adicionarAoArray(+input.value)">Adicionar</button>
+
+        <div class="array-idEspecialidade">
+            <div formArrayName="idEspecialidades">
+                <ng-container *ngFor="let item of idEspecialidade.controls; let indiceIdEspecialidade = index">
+                    <div [formGroupName]="indiceIdEspecialidade">
+                        <input formControlName="idEspecialidade" />
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="idEspecialidade.controls.length === 0">
+                </ng-container>
+            </div>
+        </div>
+        <mat-form-field>
+            <input #inputIdEspecialidade matInput type="text" placeholder="Id Especialidade" />
+        </mat-form-field>
+        <button mat-raised-button (click)="adicionarAoArrayIdEspecialidade(+inputIdEspecialidade.value)">Adicionar</button>
+    </form>
+    <div class="buttons">
+        <button mat-raised-button (click)="searchEspecialidadeMedico()">
+          Filtrar
+        </button>
+        <button mat-raised-button (click)="navigateToEspecialidadeMedicoCreate()">
+          Novo Cliente
+        </button>
+      </div>
+</mat-card>

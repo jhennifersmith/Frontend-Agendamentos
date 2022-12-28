@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-title>Nova especialidade médico</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Id do médico" [(ngModel)]="especialidadeMedico.idMedico" name="medicoId">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Id da Especialidade" [(ngModel)]="especialidadeMedico.idEspecialidade" name="especialidadeId">
+        </mat-form-field>
+    </form>
+    <div class="buttons">
+        <button mat-raised-button (click)="createEspecialidadeMedico()">
+            Salvar
+        </button>
+        
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    </div>
+</mat-card>
+

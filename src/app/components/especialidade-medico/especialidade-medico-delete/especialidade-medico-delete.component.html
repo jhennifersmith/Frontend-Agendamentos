@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title>Deletar especialidade médico</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Id do médico" [(ngModel)]="especialidadeMedico.idMedico" name="idEspecialidade" readonly>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Id da Especialidade" [(ngModel)]="especialidadeMedico.idEspecialidade" name="idEspecialidade" readonly>
+        </mat-form-field>
+    </form>
+    <div class="buttons">
+        <button mat-raised-button (click)="deleteEspecialidadeMedico()">
+            Deletar
+        </button>
+        
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    </div>
+</mat-card>

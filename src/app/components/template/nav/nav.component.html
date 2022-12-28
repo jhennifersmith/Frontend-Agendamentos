@@ -1,0 +1,44 @@
+<mat-sidenav-container>
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+            <span class="material-symbols-outlined">
+                <a mat-list-item routerLink="/">
+                    <i class="material-icons" >
+                        home
+                    </i>
+                </a>
+                <a mat-list-item routerLink="/agendamento">
+                    <i class="material-icons" >
+                        calendar_month
+                    </i>
+                </a>
+
+                <a mat-list-item routerLink="/cliente">
+                    <i class="material-icons" >
+                        person
+                    </i>
+                </a>
+
+                <a mat-list-item routerLink="/medico">
+                    <i class="material-icons" >
+                        vaccines
+                    </i>
+                </a>
+
+                <a mat-list-item routerLink="/especialidade">
+                    <i class="material-icons" >
+                        medical_services
+                    </i>
+                </a>
+                <a mat-list-item routerLink="/especialidade-medico">
+                    <i class="material-icons" >
+                        local_hospital
+                    </i>
+                </a>
+            </span>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

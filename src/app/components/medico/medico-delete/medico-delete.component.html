@@ -1,0 +1,51 @@
+<mat-card>
+    <mat-card-title>Deletar Médico</mat-card-title>
+    <form [formGroup]="medicoFormGroup">
+      <div class="medico-cadastro">
+        <div formGroupName="pessoa">
+          <mat-form-field>
+            <input matInput placeholder="Nome" id="nome" formControlName="nome" readonly/>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Data de Nascimento" id="dataNascimento" formControlName="dataNascimento" readonly />
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Sexo" id="sexo" formControlName="sexo" readonly />
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="CPF" id="cpf" formControlName="cpf" readonly />
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Altura" id="altura" formControlName="altura" readonly />
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Peso" id="peso" formControlName="peso" readonly />
+          </mat-form-field>
+        </div>
+        <mat-form-field>
+          <input matInput id="crm" placeholder="CRM" formControlName="crm" readonly />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput id="id" placeholder="id" formControlName="id" readonly />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput id="dataCriacao" placeholder="Data de Criação" formControlName="dataCriacao" readonly />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput id="Data de exclusão" placeholder="Data de Exclusão" formControlName="dataExclusao" readonly />
+        </mat-form-field>
+  
+      </div>
+    </form>
+    <div class="buttons">
+      <button mat-raised-button (click)="deleteMedico()">
+        Salvar
+      </button>
+      <!--ngsubmit-->
+      <button mat-raised-button (click)="cancel()">
+        Cancelar
+      </button>
+    </div>
+  
+  </mat-card>
