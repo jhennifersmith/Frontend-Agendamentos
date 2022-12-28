@@ -28,6 +28,7 @@ export class ClienteSearchComponent {
   ngOnInit(): void {
     
   }
+  
   navigateToClienteCreate(){
     this.router.navigate(['/cliente/create']);
   }

@@ -1,7 +1,9 @@
+import { AgendamentoGridDTO } from './agendamento-grid-dto.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, EMPTY, map, Observable } from 'rxjs';
+import { AgendamentoFilter } from './agendamento-filter.model';
 import { Agendamento } from './agendamento.model';
 import { AgendamentoDTO } from './agendamentoDTO.model';
 
@@ -47,6 +49,14 @@ export class AgendamentoService {
   update(agendamentoDTO: AgendamentoDTO): Observable<Agendamento> {
     const url = `${this.baseUrl}/`
     return this.http.put<Agendamento>(url, agendamentoDTO).pipe(
+      map((obj) => obj),
+      catchError( e => this.errorHandler(e))
+    );
+  }
+
+  search(agendamentoFilter: AgendamentoFilter): Observable<AgendamentoGridDTO[]> {
+    const url = `${this.baseUrl}/search/`
+    return this.http.post<AgendamentoGridDTO[]>(url, agendamentoFilter).pipe(
       map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
