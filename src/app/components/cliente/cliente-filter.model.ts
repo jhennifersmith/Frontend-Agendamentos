@@ -5,4 +5,6 @@ export class ClienteFilter {
     sexo: string
     dataCriacaoInicio?: string
     dataCriacaoFim?: string
+    pageSize?: number
+    page?: number
 }

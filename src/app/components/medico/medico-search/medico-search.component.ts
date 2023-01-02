@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { MedicoFilter } from '../medico-filter.model';
 import { Medico } from '../medico.model';
@@ -18,9 +19,29 @@ export class MedicoSearchComponent implements OnInit {
     nome: "",
     cpf: "",
     sexo: null,
-    dataCriacaoInicio: ""
+    dataCriacaoInicio: "",
+    page: 1,
+    pageSize: 10
+
+  }
+  
+  pageSizeOptions = [5, 10, 25];
+  length = 50;
+
+  pageEvent: PageEvent;
+
+  handlePageEvent(e: PageEvent) {
+    this.pageEvent = e;
+    this.length = e.length;
+    this.medicoFilter.pageSize = e.pageSize;
+    this.medicoFilter.page = e.pageIndex+1;
   }
 
+  setPageSizeOptions(setPageSizeOptionsInput: string) {
+    if (setPageSizeOptionsInput) {
+      this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+    }
+  }
   constructor(private medicoService: MedicoService, private router: Router){}
   
   navigateToMedicoCreate(){

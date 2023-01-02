@@ -53,7 +53,7 @@ export class EspecialidadeMedicoService {
   }
 
   search(especialidadeMedicoFilter: EspecialidadeMedicoFilter): Observable<EspecialidadeMedicoGridDTO[]> {
-    const url = `${this.baseUrl}/search/`
+    const url = `${this.baseUrl}/search`
     return this.http.post<EspecialidadeMedicoGridDTO[]>(url, especialidadeMedicoFilter).pipe(
       map((obj) => obj),
       catchError( e => this.errorHandler(e))

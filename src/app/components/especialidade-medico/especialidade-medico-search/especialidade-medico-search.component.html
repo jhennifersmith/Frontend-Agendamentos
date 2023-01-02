@@ -5,7 +5,7 @@
             <div formArrayName="idMedicos">
                 <ng-container *ngFor="let item of idMedico.controls; let indiceIdMedico = index">
                     <div [formGroupName]="indiceIdMedico">
-                        <input formControlName="idMedico" />
+                        <input formControlName="idMedicos" />
                     </div>
                 </ng-container>
                 <ng-container *ngIf="idMedico.controls.length === 0">

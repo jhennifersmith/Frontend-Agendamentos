@@ -6,4 +6,6 @@ export class MedicoFilter {
     dataCriacaoInicio?: string
     dataCriacaoFim?: string
     idEspecialidades?: string[] 
+    pageSize?: number
+    page?: number
 }

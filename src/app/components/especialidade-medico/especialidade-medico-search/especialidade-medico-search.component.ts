@@ -28,6 +28,7 @@ export class EspecialidadeMedicoSearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm(new EspecialidadeMedicoFilter());
+
   }
 
   get idMedico() {
@@ -62,7 +63,7 @@ export class EspecialidadeMedicoSearchComponent implements OnInit {
   searchEspecialidadeMedico() {
     this.especialidadeMedicoService.search(this.especialidadeMedicoFilter).subscribe(especialidadeMedicosGridDTO => {
       this.especialidadeMedicosGridDTO = especialidadeMedicosGridDTO
-      console.log(this.especialidadeMedicoFilter)
+      console.log(this.especialidadeMedicosGridDTO)
   })}
 
   navigateToEspecialidadeMedicoCreate(){

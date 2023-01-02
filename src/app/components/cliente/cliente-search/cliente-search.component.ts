@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Cliente } from '../cliente.model';
 import { ClienteFilter } from '../cliente-filter.model';
 import { ClienteService } from '../cliente.service';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-cliente-search',
@@ -20,7 +21,27 @@ export class ClienteSearchComponent {
     cpf: "",
     sexo: null,
     dataCriacaoInicio: "",
-    dataCriacaoFim: ""
+    dataCriacaoFim: "",
+    pageSize: 5,
+    page: 1
+  }
+
+  pageSizeOptions = [5, 10, 25];
+  length = 50;
+
+  pageEvent: PageEvent;
+
+  handlePageEvent(e: PageEvent) {
+    this.pageEvent = e;
+    this.length = e.length;
+    this.clienteFilter.pageSize = e.pageSize;
+    this.clienteFilter.page = e.pageIndex+1;
+  }
+
+  setPageSizeOptions(setPageSizeOptionsInput: string) {
+    if (setPageSizeOptionsInput) {
+      this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+    }
   }
 
   constructor(private clienteService: ClienteService, private router: Router) { }

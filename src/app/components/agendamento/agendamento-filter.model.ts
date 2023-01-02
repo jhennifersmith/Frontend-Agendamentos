@@ -7,4 +7,6 @@ export interface AgendamentoFilter {
     dataConsultaFim?: Date
     valorInicio?: number
     valorFim?: number
+    page?: number
+    pageSize?: number
 }

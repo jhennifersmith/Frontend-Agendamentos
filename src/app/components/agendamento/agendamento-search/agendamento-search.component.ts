@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Agendamento } from '../agendamento.model';
 import { AgendamentoService } from '../agendamento.service';
 import { Router } from '@angular/router';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-agendamento-search',
@@ -24,8 +25,30 @@ export class AgendamentoSearchComponent implements OnInit{
     dataConsultaInicio: null,
     dataConsultaFim: null,
     valorInicio: null,
-    valorFim: null
+    valorFim: null,
+    page: 1,
+    pageSize: 5
   }
+
+
+  pageSizeOptions = [5, 10, 25];
+  length = 50;
+
+  pageEvent: PageEvent;
+
+  handlePageEvent(e: PageEvent) {
+    this.pageEvent = e;
+    this.length = e.length;
+    this.agendamentoFilter.pageSize = e.pageSize;
+    this.agendamentoFilter.page = e.pageIndex+1;
+  }
+
+  setPageSizeOptions(setPageSizeOptionsInput: string) {
+    if (setPageSizeOptionsInput) {
+      this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+    }
+  }
+
 
   constructor(private agendamentoService: AgendamentoService, private router: Router) { }
 

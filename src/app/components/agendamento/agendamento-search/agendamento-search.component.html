@@ -48,6 +48,7 @@
 </mat-card>
 
 <div class="mat-elevation-z4">
+
     <table mat-table [dataSource]="agendamentosGridDTO">
         <!-- Id Column -->
         <ng-container matColumnDef="idAgendamento">
@@ -107,4 +108,7 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <mat-paginator [length]="50" [pageSize]=agendamentoFilter.pageSize [pageSizeOptions]="[5, 10, 25, 100]"
+        (page)="handlePageEvent($event)" aria-label="Select page">
+    </mat-paginator>
 </div>
