@@ -1,3 +1,4 @@
+import { EspecialidadeMedicoDTO } from './../especialidade-medico-dto.model';
 import { EspecialidadeMedico } from './../especialidade-medico.model';
 import { Component, OnInit } from '@angular/core';
 import { EspecialidadeMedicoService } from '../especialidade-medico.service';
@@ -10,9 +11,9 @@ import { Router } from '@angular/router';
 })
 export class EspecialidadeMedicoCreateComponent implements OnInit{
   
-  especialidadeMedico: EspecialidadeMedico = {
-    idMedico: null,
-    idEspecialidade: null
+  especialidadeMedicoDTO: EspecialidadeMedicoDTO = {
+    medicoId: null,
+    especialidadeId: null
   }
   
   constructor(private especialidadeMedicoService: EspecialidadeMedicoService, private router: Router){}
@@ -22,7 +23,7 @@ export class EspecialidadeMedicoCreateComponent implements OnInit{
   }
   
   createEspecialidadeMedico(): void {
-    this.especialidadeMedicoService.create(this.especialidadeMedico).subscribe( () => {
+    this.especialidadeMedicoService.create(this.especialidadeMedicoDTO).subscribe( () => {
       this.especialidadeMedicoService.showMessage('Especialidade criada!')
       this.router.navigate(['/especialidade-medico']);
     })

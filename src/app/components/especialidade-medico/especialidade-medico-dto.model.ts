@@ -1,6 +1,5 @@
-export class EspecialidadeMedicoGridDTO {
-    idEspecialidade: number;
-    descricao: string;
-    idMedico: number;
-    nome: string;
+export class EspecialidadeMedicoDTO {
+    id?: number;
+    medicoId?: number;
+    especialidadeId?: number;
 }   

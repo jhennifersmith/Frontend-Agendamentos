@@ -1,10 +1,11 @@
+import { EspecialidadeMedicoDTO } from './especialidade-medico-dto.model';
 import { EspecialidadeMedico } from './especialidade-medico.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, EMPTY, map, Observable } from 'rxjs';
 import { EspecialidadeMedicoFilter } from './especialidade-medico-filter.model';
-import { EspecialidadeMedicoGridDTO } from './especialidade-medico-dto.model';
+import { EspecialidadeMedicoGridDTO } from './especialidade-medico-grid-dto.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +24,8 @@ export class EspecialidadeMedicoService {
     })
   }
 
-  create(especialidadeMedico: EspecialidadeMedico): Observable<EspecialidadeMedico> {
-    return this.http.post<EspecialidadeMedico>(this.baseUrl, especialidadeMedico).pipe(
+  create(especialidadeMedicoDTO: EspecialidadeMedicoDTO): Observable<EspecialidadeMedicoDTO> {
+    return this.http.post<EspecialidadeMedicoDTO>(this.baseUrl, especialidadeMedicoDTO).pipe(
       map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );

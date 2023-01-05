@@ -1,4 +1,51 @@
+mat-card {
+    padding: 1rem;
+    background-color: #FAFFBD;
+    margin-bottom: 1rem;
+}
+
 form {
     display: flex;
     flex-direction: column;
+    padding: 1rem;
+}
+.cliente-search {
+    display: flex;
+    flex-direction: column;
+}
+mat-form-field {
+    padding: 0.5rem;
+    width: 25rem;
+    height: 5rem;
+}
+
+mat-card-title {
+    text-align: left;
+    margin-left: 1rem;
+}
+
+
+.buttons button {
+    margin-left: 1rem;
+    background-color: #8C914E;
+}
+
+.mat-elevation-z4 {
+    background-color: #8C914E;
+}
+
+.mat-elevation-z4 {
+    background-color: #8C914E;
+}
+
+.mat-elevation-z4 table {
+    background-color: #D8DE8E;
+}
+
+.mat-elevation-z4 table th{
+    background-color: #8C914E;
+}
+
+mat-paginator {
+    background-color: #8C914E;
 }

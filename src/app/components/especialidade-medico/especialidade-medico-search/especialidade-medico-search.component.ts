@@ -1,4 +1,4 @@
-import { EspecialidadeMedicoGridDTO } from './../especialidade-medico-dto.model';
+import { EspecialidadeMedicoGridDTO } from '../especialidade-medico-grid-dto.model';
 import { EspecialidadeMedicoFilter } from './../especialidade-medico-filter.model';
 import { EspecialidadeMedicoService } from './../especialidade-medico.service';
 import { EspecialidadeMedico } from './../especialidade-medico.model';
@@ -20,15 +20,18 @@ export class EspecialidadeMedicoSearchComponent implements OnInit {
 
   especialidadeMedicoFilter: EspecialidadeMedicoFilter;
 
+  displayedColumns = ['idEspecialidade', 'descricao', 'idMedico', 'nomeMedico', 'acoes']
   constructor(
-    private fb: FormBuilder, 
-    private especialidadeMedicoService: EspecialidadeMedicoService, 
+    private fb: FormBuilder,
+    private especialidadeMedicoService: EspecialidadeMedicoService,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.createForm(new EspecialidadeMedicoFilter());
-
+    this.especialidadeMedicoFilter = new EspecialidadeMedicoFilter()
+    this.especialidadeMedicoFilter.idMedicos = new Array<number>();
+    this.especialidadeMedicoFilter.idEspecialidades = new Array<number>();
   }
 
   get idMedico() {
@@ -45,12 +48,14 @@ export class EspecialidadeMedicoSearchComponent implements OnInit {
     });
   }
 
+
   adicionarAoArray(idMedico: number) {
     this.idMedico.push(
       this.fb.group({
         idMedico: idMedico
       })
     );
+    this.especialidadeMedicoFilter.idMedicos.push(idMedico);
   }
   adicionarAoArrayIdEspecialidade(idEspecialidade: number) {
     this.idEspecialidade.push(
@@ -58,15 +63,17 @@ export class EspecialidadeMedicoSearchComponent implements OnInit {
         idEspecialidade: idEspecialidade
       })
     );
+    this.especialidadeMedicoFilter.idEspecialidades.push(idEspecialidade);
   }
 
   searchEspecialidadeMedico() {
+    console.log(this.especialidadeMedicoFilter)
     this.especialidadeMedicoService.search(this.especialidadeMedicoFilter).subscribe(especialidadeMedicosGridDTO => {
       this.especialidadeMedicosGridDTO = especialidadeMedicosGridDTO
-      console.log(this.especialidadeMedicosGridDTO)
-  })}
+    })
+  }
 
-  navigateToEspecialidadeMedicoCreate(){
+  navigateToEspecialidadeMedicoCreate() {
     this.router.navigate(['/especialidade-medico/create']);
   }
 

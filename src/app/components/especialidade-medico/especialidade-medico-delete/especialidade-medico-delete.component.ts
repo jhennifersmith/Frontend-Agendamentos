@@ -2,6 +2,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { EspecialidadeMedicoService } from './../especialidade-medico.service';
 import { EspecialidadeMedico } from './../especialidade-medico.model';
 import { Component, OnInit } from '@angular/core';
+import { EspecialidadeMedicoDTO } from '../especialidade-medico-dto.model';
 
 @Component({
   selector: 'app-especialidade-medico-delete',
@@ -10,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EspecialidadeMedicoDeleteComponent implements OnInit {
   especialidadeMedico: EspecialidadeMedico
+  especialidadeMedicoDTO: EspecialidadeMedicoDTO
 
   constructor(
     private especialidadeMedicoService: EspecialidadeMedicoService,
@@ -19,12 +21,12 @@ export class EspecialidadeMedicoDeleteComponent implements OnInit {
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.especialidadeMedicoService.readById(id).subscribe(especialidadeMedico => {
-      this.especialidadeMedico = especialidadeMedico
+      this.especialidadeMedicoDTO = especialidadeMedico
     })
   }
 
   deleteEspecialidadeMedico(): void {
-    this.especialidadeMedicoService.delete(this.especialidadeMedico.id).subscribe(() => {
+    this.especialidadeMedicoService.delete(this.especialidadeMedicoDTO.id).subscribe(() => {
       this.especialidadeMedicoService.showMessage('Especialidade médico excluída com sucesso!')
       this.router.navigate(['/especialidade-medico'])
     })

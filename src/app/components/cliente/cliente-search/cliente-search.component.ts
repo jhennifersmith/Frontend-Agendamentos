@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Cliente } from '../cliente.model';
@@ -11,7 +11,7 @@ import { PageEvent } from '@angular/material/paginator';
   templateUrl: './cliente-search.component.html',
   styleUrls: ['./cliente-search.component.css']
 })
-export class ClienteSearchComponent {
+export class ClienteSearchComponent implements OnInit {
   
   clientes:Cliente[]
   displayedColumns = ['id', 'nome' , 'cpf', 'sexo', 'dataCriacao', 'dataExclusao', 'acoes']
@@ -36,6 +36,7 @@ export class ClienteSearchComponent {
     this.length = e.length;
     this.clienteFilter.pageSize = e.pageSize;
     this.clienteFilter.page = e.pageIndex+1;
+    this.searchCliente()
   }
 
   setPageSizeOptions(setPageSizeOptionsInput: string) {
@@ -47,7 +48,6 @@ export class ClienteSearchComponent {
   constructor(private clienteService: ClienteService, private router: Router) { }
 
   ngOnInit(): void {
-    
   }
   
   navigateToClienteCreate(){

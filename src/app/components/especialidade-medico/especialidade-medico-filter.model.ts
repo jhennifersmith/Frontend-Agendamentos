@@ -1,4 +1,4 @@
 export class EspecialidadeMedicoFilter {
-    idMedico?: number[];
-    idEspecialidade: number[];
+    idMedicos?: number[];
+    idEspecialidades: number[];
 }
