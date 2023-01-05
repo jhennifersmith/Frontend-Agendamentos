@@ -10,22 +10,19 @@ const especialidadeRoutes: Routes = [
     {
         path: "especialidade",
         component: EspecialidadeCrudComponent,
-        children: [
-            {
-                path: "create",
-                component: EspecialidadeCreateComponent
-            },
-            {
-                path: "update/:id",
-                component: EspecialidadeUpdateComponent
-            },
-            {
-                path: "delete",
-                component: EspecialidadeDeleteComponent
-            }
-        ]
+    },
+    {
+        path: "especialidade/create",
+        component: EspecialidadeCreateComponent
+    },
+    {
+        path: "especialidade/update/:id",
+        component: EspecialidadeUpdateComponent
+    },
+    {
+        path: "especialidade/delete",
+        component: EspecialidadeDeleteComponent
     }
-
 ];
 
 @NgModule({

@@ -11,26 +11,19 @@ const agendamentoRoutes: Routes = [
     {
         path: "agendamento",
         component: AgendamentoCrudComponent,
-        children: [
-            {
-                path: "create",
-                component: AgendamentoCreateComponent
-            },
-            {
-                path: "update/:id",
-                component: AgendamentoUpdateComponent
-            },
-            {
-                path: "read",
-                component: AgendamentoReadComponent
-            },
-            {
-                path: "search",
-                component: AgendamentoSearchComponent
-            }
-        ]
+    },
+    {
+        path: "agendamento/create",
+        component: AgendamentoCreateComponent
+    },
+    {
+        path: "agendamento/update/:id",
+        component: AgendamentoUpdateComponent
+    },
+    {
+        path: "agendamento/read",
+        component: AgendamentoReadComponent
     }
-
 ];
 
 @NgModule({

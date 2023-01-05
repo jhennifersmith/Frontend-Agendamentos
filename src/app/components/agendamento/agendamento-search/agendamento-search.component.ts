@@ -41,6 +41,7 @@ export class AgendamentoSearchComponent implements OnInit{
     this.length = e.length;
     this.agendamentoFilter.pageSize = e.pageSize;
     this.agendamentoFilter.page = e.pageIndex+1;
+    this.searchAgendamento();
   }
 
   setPageSizeOptions(setPageSizeOptionsInput: string) {

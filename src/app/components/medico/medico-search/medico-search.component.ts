@@ -35,6 +35,7 @@ export class MedicoSearchComponent implements OnInit {
     this.length = e.length;
     this.medicoFilter.pageSize = e.pageSize;
     this.medicoFilter.page = e.pageIndex+1;
+    this.searchMedico();
   }
 
   setPageSizeOptions(setPageSizeOptionsInput: string) {

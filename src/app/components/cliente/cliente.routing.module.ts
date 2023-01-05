@@ -11,26 +11,23 @@ const clienteRoutes: Routes = [
     {
         path: "cliente",
         component: ClienteCrudComponent,
-        children: [
-            {
-                path: "create",
-                component: ClienteCreateComponent
-            },
-            {
-                path: "update/:id",
-                component: ClienteUpdateComponent
-            },
-            {
-                path: "delete",
-                component: ClienteDeleteComponent
-            },
-            {
-                path: "search",
-                component: ClienteSearchComponent
-            }
-        ]
+    },
+    {
+        path: "cliente/create",
+        component: ClienteCreateComponent
+    },
+    {
+        path: "cliente/update/:id",
+        component: ClienteUpdateComponent
+    },
+    {
+        path: "cliente/delete",
+        component: ClienteDeleteComponent
+    },
+    {
+        path: "cliente/search",
+        component: ClienteSearchComponent
     }
-
 ];
 
 @NgModule({
