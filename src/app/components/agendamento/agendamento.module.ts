@@ -25,7 +25,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { AgendamentoFormComponent } from './agendamento-form/agendamento-form.component';
-//import { RouterModule } from '@angular/router';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
     imports: [
@@ -50,7 +50,7 @@ import { AgendamentoFormComponent } from './agendamento-form/agendamento-form.co
         MatSortModule,
         ReactiveFormsModule,
         MatRadioModule,
-     //   RouterModule
+        MatSelectModule
     ],
     exports: [],
     declarations: [

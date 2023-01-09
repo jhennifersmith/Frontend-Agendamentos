@@ -26,6 +26,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { ClienteService } from './cliente.service';
 import { ClienteFormComponent } from './cliente-form/cliente-form.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { ClienteFormComponent } from './cliente-form/cliente-form.component';
         MatSortModule,
         ReactiveFormsModule,
         MatRadioModule,
-        ClienteRoutingModule
+        ClienteRoutingModule,
+        MatSelectModule
     ],
     exports: [],
     declarations: [

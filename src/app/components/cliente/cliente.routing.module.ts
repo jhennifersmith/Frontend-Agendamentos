@@ -22,7 +22,7 @@ const clienteRoutes: Routes = [
         component: ClienteFormComponent
     },
     {
-        path: "cliente/delete",
+        path: "cliente/delete/:id",
         component: ClienteDeleteComponent
     },
     {

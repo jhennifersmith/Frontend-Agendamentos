@@ -26,7 +26,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { MedicoService } from './medico.service';
 import { MedicoFormComponent } from './medico-form/medico-form.component';
-
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
     imports: [
@@ -50,7 +50,8 @@ import { MedicoFormComponent } from './medico-form/medico-form.component';
         MatSortModule,
         ReactiveFormsModule,
         MatRadioModule,
-        MedicoRoutingModule
+        MedicoRoutingModule,
+        MatSelectModule
     ],
     exports: [],
     declarations: [

@@ -62,10 +62,10 @@ export class ClienteFormComponent implements OnInit {
       pessoa: this.fb.group({
         nome: [''],
         dataNascimento: [''],
-        sexo: [''],
+        sexo: ['FEM'], 
         cpf: [''],
         altura: [''],
-        peso: ['']
+        peso: [''],
       }),
       id: [''],
       telefones: this.fb.array([]),

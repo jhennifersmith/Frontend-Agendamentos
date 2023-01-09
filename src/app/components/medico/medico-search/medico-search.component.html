@@ -5,10 +5,19 @@
       <mat-form-field>
         <input matInput placeholder="Nome" id="nome" [(ngModel)]="medicoFilter.nome" name="nome" />
       </mat-form-field>
-      <mat-form-field>
+      <!-- <mat-form-field>
         <input matInput placeholder="Sexo" id="sexo" [(ngModel)]="medicoFilter.sexo" name="sexo" />
+      </mat-form-field> -->
+      <mat-form-field appearance="fill">
+        <mat-label>Sexo</mat-label>
+        <mat-select [(value)]="medicoFilter.sexo">
+          <mat-option value="FEM">Feminino</mat-option>
+          <mat-option value="MASC">Masculino</mat-option>
+          <mat-option value="INDEF">Indefinido</mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field>
+
         <input matInput placeholder="CPF" id="cpf" [(ngModel)]="medicoFilter.cpf" name="cpf" />
       </mat-form-field>
       <mat-form-field>

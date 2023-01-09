@@ -9,9 +9,18 @@
           <mat-form-field>
             <input matInput placeholder="Data de Nascimento" id="dataNascimento" formControlName="dataNascimento" />
           </mat-form-field>
-          <mat-form-field>
+          <!-- <mat-form-field>
             <input matInput placeholder="Sexo" id="sexo" formControlName="sexo" />
+          </mat-form-field> -->
+          <mat-form-field appearance="fill">
+            <mat-label>Sexo</mat-label>
+            <mat-select formControlName="sexo">
+              <mat-option value="FEM">Feminino</mat-option>
+              <mat-option value="MASC">Masculino</mat-option>
+              <mat-option value="INDEF">Indefinido</mat-option>
+            </mat-select>
           </mat-form-field>
+
           <mat-form-field>
             <input matInput placeholder="CPF" id="cpf" formControlName="cpf" />
           </mat-form-field>
