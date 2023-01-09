@@ -60,6 +60,8 @@ export class AgendamentoSearchComponent implements OnInit{
   navigateToAgendamentoCreate(){
     this.router.navigate(['/agendamento/create']);
   }
+
+
   searchAgendamento() {
     this.agendamentoService.search(this.agendamentoFilter).subscribe(agendamentosGridDTO => {
       this.agendamentosGridDTO = agendamentosGridDTO

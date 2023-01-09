@@ -24,6 +24,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { AgendamentoFormComponent } from './agendamento-form/agendamento-form.component';
 //import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -56,7 +57,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
         AgendamentoCrudComponent, 
         AgendamentoCreateComponent,
         AgendamentoSearchComponent,
-        AgendamentoUpdateComponent
+        AgendamentoUpdateComponent,
+        AgendamentoFormComponent
     ],
     providers: [AgendamentoService],
 })

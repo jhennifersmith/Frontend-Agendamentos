@@ -24,7 +24,6 @@ export class EspecialidadeUpdateComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id')
     this.especialidadeService.readById(id).subscribe((especialidade) => {
       this.especialidade = especialidade
-      
     });
   }
 

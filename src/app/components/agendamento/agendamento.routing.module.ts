@@ -1,3 +1,4 @@
+import { AgendamentoFormComponent } from './agendamento-form/agendamento-form.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,16 +15,17 @@ const agendamentoRoutes: Routes = [
     },
     {
         path: "agendamento/create",
-        component: AgendamentoCreateComponent
+        component: AgendamentoFormComponent
     },
     {
         path: "agendamento/update/:id",
-        component: AgendamentoUpdateComponent
+        component: AgendamentoFormComponent
     },
     {
         path: "agendamento/read",
         component: AgendamentoReadComponent
-    }
+    },
+
 ];
 
 @NgModule({

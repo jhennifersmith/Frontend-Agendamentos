@@ -25,6 +25,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { ClienteService } from './cliente.service';
+import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { ClienteService } from './cliente.service';
         ClienteSearchComponent,
         ClienteUpdateComponent,
         ClienteDeleteComponent,
+        ClienteFormComponent,
     ],
     providers: [ClienteService],
 })

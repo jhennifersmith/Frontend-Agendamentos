@@ -25,6 +25,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { MedicoService } from './medico.service';
+import { MedicoFormComponent } from './medico-form/medico-form.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { MedicoService } from './medico.service';
         MedicoSearchComponent,
         MedicoUpdateComponent,
         MedicoDeleteComponent,
+        MedicoFormComponent,
     ],
     providers: [MedicoService],
 })

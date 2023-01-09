@@ -6,6 +6,7 @@ import { ClienteCreateComponent } from './cliente-create/cliente-create.componen
 import { ClienteUpdateComponent } from './cliente-update/cliente-update.component';
 import { ClienteSearchComponent } from './cliente-search/cliente-search.component';
 import { ClienteDeleteComponent } from './cliente-delete/cliente-delete.component';
+import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 
 const clienteRoutes: Routes = [
     {
@@ -14,11 +15,11 @@ const clienteRoutes: Routes = [
     },
     {
         path: "cliente/create",
-        component: ClienteCreateComponent
+        component: ClienteFormComponent
     },
     {
         path: "cliente/update/:id",
-        component: ClienteUpdateComponent
+        component: ClienteFormComponent
     },
     {
         path: "cliente/delete",

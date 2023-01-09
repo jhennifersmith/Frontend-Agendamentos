@@ -5,6 +5,7 @@ import { EspecialidadeCrudComponent } from '../../views/especialidade-crud/espec
 import { EspecialidadeCreateComponent } from './especialidade-create/especialidade-create.component';
 import { EspecialidadeUpdateComponent } from './especialidade-update/especialidade-update.component';
 import { EspecialidadeDeleteComponent } from './especialidade-delete/especialidade-delete.component';
+import { EspecialidadeFormComponent } from './especialidade-form/especialidade-form.component';
 
 const especialidadeRoutes: Routes = [
     {
@@ -13,11 +14,11 @@ const especialidadeRoutes: Routes = [
     },
     {
         path: "especialidade/create",
-        component: EspecialidadeCreateComponent
+        component: EspecialidadeFormComponent
     },
     {
         path: "especialidade/update/:id",
-        component: EspecialidadeUpdateComponent
+        component: EspecialidadeFormComponent
     },
     {
         path: "especialidade/delete",

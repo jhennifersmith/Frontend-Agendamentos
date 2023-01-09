@@ -25,6 +25,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { EspecialidadeService } from './especialidade.service';
+import { EspecialidadeFormComponent } from './especialidade-form/especialidade-form.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { EspecialidadeService } from './especialidade.service';
         EspecialidadeCreateComponent,
         EspecialidadeUpdateComponent,
         EspecialidadeDeleteComponent,
-        EspecialidadeReadComponent
+        EspecialidadeReadComponent,
+        EspecialidadeFormComponent
     ],
     providers: [EspecialidadeService],
 })

@@ -6,6 +6,7 @@ import { MedicoCreateComponent } from './medico-create/medico-create.component';
 import { MedicoUpdateComponent } from './medico-update/medico-update.component';
 import { MedicoSearchComponent } from './medico-search/medico-search.component';
 import { MedicoDeleteComponent } from './medico-delete/medico-delete.component';
+import { MedicoFormComponent } from './medico-form/medico-form.component';
 
 const medicoRoutes: Routes = [
     {
@@ -14,11 +15,11 @@ const medicoRoutes: Routes = [
     },
     {
         path: "medico/create",
-        component: MedicoCreateComponent
+        component: MedicoFormComponent
     },
     {
         path: "medico/update/:id",
-        component: MedicoUpdateComponent
+        component: MedicoFormComponent
     },
     {
         path: "medico/delete",
