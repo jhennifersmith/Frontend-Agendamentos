@@ -1,0 +1,28 @@
+mat-card {
+    padding: 1rem;
+    background-color: #FAFFBD;
+    margin-bottom: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+mat-form-field {
+    padding: 0.5rem;
+    width: 25rem;
+    height: 5rem;
+}
+
+mat-card-title {
+    text-align: left;
+    margin-left: 1rem;
+}
+
+.buttons button {
+    margin-left: 1rem;
+    background-color: #8C914E;
+}
+

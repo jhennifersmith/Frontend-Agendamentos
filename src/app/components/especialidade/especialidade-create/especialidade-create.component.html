@@ -7,15 +7,15 @@
         <mat-form-field>
             <input matInput placeholder="Descrição" [(ngModel)]="especialidade.descricao" name="descricao">
         </mat-form-field>
+        <div class="buttons">
+            <button mat-raised-button (click)="createEspecialidade()">
+                Salvar
+            </button>
+            
+            <button mat-raised-button (click)="cancel()">
+                Cancelar
+            </button>
+        </div>
     </form>
-    <div class="buttons">
-        <button mat-raised-button (click)="createEspecialidade()">
-            Salvar
-        </button>
-        
-        <button mat-raised-button (click)="cancel()">
-            Cancelar
-        </button>
-    </div>
 </mat-card>
 

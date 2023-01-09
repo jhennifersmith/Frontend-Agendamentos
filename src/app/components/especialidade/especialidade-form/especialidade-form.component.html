@@ -8,12 +8,13 @@
             <input matInput placeholder="Descrição" [(ngModel)]="especialidade.descricao" name="descricao">
         </mat-form-field>
     </form>
+    <div class="buttons">
+        <button mat-raised-button (click)="save()">
+            Salvar
+        </button>
+
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    </div>
 </mat-card>
-
-<button mat-raised-button (click)="save()">
-    Salvar
-</button>
-
-<button mat-raised-button (click)="cancel()">
-    Cancelar
-</button>
