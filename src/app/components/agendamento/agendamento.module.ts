@@ -1,9 +1,7 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AgendamentoCrudComponent } from './../../views/agendamento-crud/agendamento-crud.component';
 import { AgendamentoRoutingModule } from './agendamento.routing.module';
-import { AgendamentoUpdateComponent } from './agendamento-update/agendamento-update.component';
 import { AgendamentoSearchComponent } from './agendamento-search/agendamento-search.component';
-import { AgendamentoCreateComponent } from './agendamento-create/agendamento-create.component';
 import { AgendamentoService } from './agendamento.service';
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
@@ -55,9 +53,7 @@ import { MatSelectModule } from '@angular/material/select';
     exports: [],
     declarations: [
         AgendamentoCrudComponent, 
-        AgendamentoCreateComponent,
         AgendamentoSearchComponent,
-        AgendamentoUpdateComponent,
         AgendamentoFormComponent
     ],
     providers: [AgendamentoService],
