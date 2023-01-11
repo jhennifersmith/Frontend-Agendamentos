@@ -1,3 +1,4 @@
+import { EspecialidadeReadComponent } from './especialidade-read/especialidade-read.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,19 +12,26 @@ const especialidadeRoutes: Routes = [
     {
         path: "especialidade",
         component: EspecialidadeCrudComponent,
+        children: [
+            {
+                path: "create",
+                component: EspecialidadeFormComponent
+            },
+            {
+                path: "update/:id",
+                component: EspecialidadeFormComponent
+            },
+            {
+                path: "delete",
+                component: EspecialidadeDeleteComponent
+            },
+            {
+                path: "",
+                component: EspecialidadeReadComponent
+            }
+        ]
     },
-    {
-        path: "especialidade/create",
-        component: EspecialidadeFormComponent
-    },
-    {
-        path: "especialidade/update/:id",
-        component: EspecialidadeFormComponent
-    },
-    {
-        path: "especialidade/delete",
-        component: EspecialidadeDeleteComponent
-    }
+
 ];
 
 @NgModule({

@@ -12,23 +12,26 @@ const medicoRoutes: Routes = [
     {
         path: "medico",
         component: MedicoCrudComponent,
+        children: [
+            {
+                path: "create",
+                component: MedicoFormComponent
+            },
+            {
+                path: "update/:id",
+                component: MedicoFormComponent
+            },
+            {
+                path: "delete",
+                component: MedicoDeleteComponent
+            },
+            {
+                path: "",
+                component: MedicoSearchComponent
+            }
+        ]
     },
-    {
-        path: "medico/create",
-        component: MedicoFormComponent
-    },
-    {
-        path: "medico/update/:id",
-        component: MedicoFormComponent
-    },
-    {
-        path: "medico/delete",
-        component: MedicoDeleteComponent
-    },
-    {
-        path: "medico/search",
-        component: MedicoSearchComponent
-    }
+ 
 
 ];
 

@@ -10,19 +10,22 @@ const especialidademedicoRoutes: Routes = [
     {
         path: "especialidade-medico",
         component: EspecialidadeMedicoCrudComponent,
+        children: [
+            {
+                path: "create",
+                component: EspecialidadeMedicoCreateComponent
+            },
+            {
+                path: "delete",
+                component: EspecialidadeMedicoDeleteComponent
+            },
+            {
+                path: "",
+                component: EspecialidadeMedicoSearchComponent
+            }
+        ]
     },
-    {
-        path: "especialidade-medico/create",
-        component: EspecialidadeMedicoCreateComponent
-    },
-    {
-        path: "especialidade-medico/delete",
-        component: EspecialidadeMedicoDeleteComponent
-    },
-    {
-        path: "especialidade-medico/search",
-        component: EspecialidadeMedicoSearchComponent
-    }
+
 ];
 
 @NgModule({

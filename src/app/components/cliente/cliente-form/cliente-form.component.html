@@ -53,6 +53,7 @@
           <ng-container *ngFor="let item of telefone.controls; let indiceTelefone = index">
             <div [formGroupName]="indiceTelefone">
               <mat-form-field>
+                <mat-label>Telefone</mat-label>
                 <input #input matInput type="tel" formControlName="numero" />
               </mat-form-field>
             </div>
@@ -74,6 +75,7 @@
           <ng-container *ngFor="let item of email.controls; let indiceEmail = index">
             <div [formGroupName]="indiceEmail">
               <mat-form-field>
+                <mat-label>Email</mat-label>
                 <input matInput type="text" formControlName="endereco" />
               </mat-form-field>
             </div>

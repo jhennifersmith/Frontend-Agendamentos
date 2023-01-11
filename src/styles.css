@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 
+*{
+    font-family: 'Poppins';
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Poppins';  background-color: #FAFFBD;}
+body { margin: 0;   background-color: #FAFFBD;}
 
 .msg-success{
     background-color: green;

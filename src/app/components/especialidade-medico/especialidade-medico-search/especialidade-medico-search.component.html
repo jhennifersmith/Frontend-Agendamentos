@@ -7,7 +7,7 @@
           <div [formGroupName]="indiceIdMedico">
             <mat-form-field>
               <mat-label>Id do médico</mat-label>
-              <input matInput formControlName="idMedico" type="number" min="1"/>
+              <input matInput formControlName="idMedico" type="number" min="1" />
             </mat-form-field>
           </div>
         </ng-container>
@@ -18,7 +18,7 @@
     <div class="input-idMedico">
       <mat-form-field>
         <mat-label>Id do médico</mat-label>
-        <input #input matInput type="number" placeholder="Id Médico" min="1"/>
+        <input #input matInput type="number" placeholder="Id Médico" min="1" />
       </mat-form-field>
       <button mat-raised-button (click)="adicionarAoArray(+input.value)">Adicionar</button>
     </div>
@@ -97,4 +97,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  <mat-paginator [length]="50" [pageSize]=especialidadeMedicoFilter.pageSize [pageSizeOptions]="[5, 10, 25, 100]"
+    (page)="handlePageEvent($event)" aria-label="Select page">
+  </mat-paginator>
 </div>

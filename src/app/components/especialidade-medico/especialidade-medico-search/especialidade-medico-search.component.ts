@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { ClienteService } from '../../cliente/cliente.service';
 import { Router } from '@angular/router';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-especialidade-medico-search',
@@ -44,8 +45,29 @@ export class EspecialidadeMedicoSearchComponent implements OnInit {
   createForm(especialidadeMedicoFilter: EspecialidadeMedicoFilter) {
     this.especialidadeMedicoFormGroup = this.fb.group({
       idMedicos: this.fb.array([]),
-      idEspecialidades: this.fb.array([])
+      idEspecialidades: this.fb.array([]),
+      page: 1,
+      pageSize: 5
     });
+  }
+
+  pageSizeOptions = [5, 10, 25];
+  length = 50;
+
+  pageEvent: PageEvent;
+
+  handlePageEvent(e: PageEvent) {
+    this.pageEvent = e;
+    this.length = e.length;
+    this.especialidadeMedicoFilter.pageSize = e.pageSize;
+    this.especialidadeMedicoFilter.page = e.pageIndex+1;
+    this.searchEspecialidadeMedico();
+  }
+
+  setPageSizeOptions(setPageSizeOptionsInput: string) {
+    if (setPageSizeOptionsInput) {
+      this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+    }
   }
 
 

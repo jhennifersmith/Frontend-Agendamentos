@@ -1,7 +1,14 @@
+*{
+    font-family: 'Poppins';
+}
 mat-card {
     padding: 1rem;
     background-color: #FAFFBD;
     margin-bottom: 1rem;
+}
+
+mat-card-title {
+    padding-left: 1rem;
 }
 
 form {
@@ -21,6 +28,9 @@ mat-card-title {
     margin-left: 1rem;
 }
 
+.buttons {
+    padding-left: 1rem;
+}
 
 .buttons button {
     margin-left: 1rem;
