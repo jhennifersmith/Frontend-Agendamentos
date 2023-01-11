@@ -1,8 +1,6 @@
 import { EspecialidadeReadComponent } from './especialidade-read/especialidade-read.component';
 import { EspecialidadeRoutingModule } from './especialidade.routing.module';
 import { EspecialidadeDeleteComponent } from './especialidade-delete/especialidade-delete.component';
-import { EspecialidadeUpdateComponent } from './especialidade-update/especialidade-update.component';
-import { EspecialidadeCreateComponent } from './especialidade-create/especialidade-create.component';
 import { EspecialidadeCrudComponent } from './../../views/especialidade-crud/especialidade-crud.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from "@angular/core";
@@ -55,8 +53,6 @@ import { EspecialidadeFormComponent } from './especialidade-form/especialidade-f
     exports: [],
     declarations: [
         EspecialidadeCrudComponent,
-        EspecialidadeCreateComponent,
-        EspecialidadeUpdateComponent,
         EspecialidadeDeleteComponent,
         EspecialidadeReadComponent,
         EspecialidadeFormComponent

@@ -1,8 +1,6 @@
 import { MedicoRoutingModule } from './medico.routing.module';
 import { MedicoDeleteComponent } from './medico-delete/medico-delete.component';
-import { MedicoUpdateComponent } from './medico-update/medico-update.component';
 import { MedicoSearchComponent } from './medico-search/medico-search.component';
-import { MedicoCreateComponent } from './medico-create/medico-create.component';
 import { MedicoCrudComponent } from './../../views/medico-crud/medico-crud.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from "@angular/core";
@@ -56,9 +54,7 @@ import { MatSelectModule } from '@angular/material/select';
     exports: [],
     declarations: [
         MedicoCrudComponent,
-        MedicoCreateComponent,
         MedicoSearchComponent,
-        MedicoUpdateComponent,
         MedicoDeleteComponent,
         MedicoFormComponent,
     ],

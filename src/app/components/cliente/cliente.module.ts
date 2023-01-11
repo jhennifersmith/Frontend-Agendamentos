@@ -1,8 +1,6 @@
 import { ClienteRoutingModule } from './cliente.routing.module';
 import { ClienteDeleteComponent } from './cliente-delete/cliente-delete.component';
-import { ClienteUpdateComponent } from './cliente-update/cliente-update.component';
 import { ClienteSearchComponent } from './cliente-search/cliente-search.component';
-import { ClienteCreateComponent } from './cliente-create/cliente-create.component';
 import { ClienteCrudComponent } from './../../views/cliente-crud/cliente-crud.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from "@angular/core";
@@ -57,9 +55,7 @@ import {MatSelectModule} from '@angular/material/select';
     exports: [],
     declarations: [
         ClienteCrudComponent,
-        ClienteCreateComponent,
         ClienteSearchComponent,
-        ClienteUpdateComponent,
         ClienteDeleteComponent,
         ClienteFormComponent,
     ],
