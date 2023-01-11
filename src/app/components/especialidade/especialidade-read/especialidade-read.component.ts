@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { EspecialidadeService } from './../especialidade.service';
 import { Especialidade } from './../especialidade.model';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,7 @@ export class EspecialidadeReadComponent implements OnInit {
   especialidades: Especialidade[]
   displayedColumns = ['id', 'nome', 'descricao', 'acoes']
 
-  constructor(private especialidadeService: EspecialidadeService) { }
+  constructor(private especialidadeService: EspecialidadeService, private router: Router) { }
 
   ngOnInit(): void {
     this.especialidadeService.read().subscribe(especialidades => {
@@ -20,5 +21,7 @@ export class EspecialidadeReadComponent implements OnInit {
       console.log(especialidades)
     })
   }
-
+  navigateToEspecialidadeCreate(){
+    this.router.navigate(['/especialidade/create']);
+  }
 }

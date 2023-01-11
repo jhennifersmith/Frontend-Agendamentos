@@ -2,32 +2,41 @@
   <mat-card-title>Filtrar medico</mat-card-title>
   <form>
     <div class="medico-search">
-      <mat-form-field>
-        <mat-label>Nome</mat-label>
-        <input matInput placeholder="Nome" id="nome" [(ngModel)]="medicoFilter.nome" name="nome" />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Sexo</mat-label>
-        <mat-select [(value)]="medicoFilter.sexo">
-          <mat-option value="FEM">Feminino</mat-option>
-          <mat-option value="MASC">Masculino</mat-option>
-          <mat-option value="INDEF">Indefinido</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>CPF</mat-label>
-        <input matInput placeholder="CPF" id="cpf" [(ngModel)]="medicoFilter.cpf" name="cpf" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Data de criação inicial</mat-label>
-        <input matInput id="dataCriacaoInicio" placeholder="Data de criação inicial"
-          [(ngModel)]="medicoFilter.dataCriacaoInicio" name="dataCriacaoInicio" type="datetime-local"/>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Data de criação final</mat-label>
-        <input matInput id="dataCriacaoFim" placeholder="Data de criação final" [(ngModel)]="medicoFilter.dataCriacaoFim"
-          name="dataCriacaoFim" type="datetime-local" />
-      </mat-form-field>
+      <div class="row1">
+        <mat-form-field>
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Nome" id="nome" [(ngModel)]="medicoFilter.nome" name="nome" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>CPF</mat-label>
+          <input matInput placeholder="CPF" id="cpf" [(ngModel)]="medicoFilter.cpf" name="cpf" />
+        </mat-form-field>
+      </div>
+
+      <div class="row2">
+        <mat-form-field appearance="fill">
+          <mat-label>Sexo</mat-label>
+          <mat-select [(value)]="medicoFilter.sexo">
+            <mat-option value="FEM">Feminino</mat-option>
+            <mat-option value="MASC">Masculino</mat-option>
+            <mat-option value="INDEF">Indefinido</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="row3">
+        <mat-form-field>
+          <mat-label>Data de criação inicial</mat-label>
+          <input matInput id="dataCriacaoInicio" placeholder="Data de criação inicial"
+            [(ngModel)]="medicoFilter.dataCriacaoInicio" name="dataCriacaoInicio" type="datetime-local" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Data de criação final</mat-label>
+          <input matInput id="dataCriacaoFim" placeholder="Data de criação final"
+            [(ngModel)]="medicoFilter.dataCriacaoFim" name="dataCriacaoFim" type="datetime-local" />
+        </mat-form-field>
+      </div>
+
     </div>
   </form>
   <div class="buttons">
@@ -80,12 +89,12 @@
     <ng-container matColumnDef="acoes">
       <th mat-header-cell *matHeaderCellDef>Ações</th>
       <td mat-cell *matCellDef="let row">
-        <a routerLink="/medico/update/{{ row.id }}" class="edit">
+        <a [routerLink]="'/medico/update/'+row.id" class="edit">
           <i class="material-icons">
             edit
           </i>
         </a>
-        <a routerLink="/medico/delete/{{ row.id }}">
+        <a [routerLink]="'/medico/delete/'+row.id">
           <i class="material-icons">
             delete
           </i>

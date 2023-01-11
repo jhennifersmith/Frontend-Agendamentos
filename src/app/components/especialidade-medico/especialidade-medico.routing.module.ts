@@ -15,7 +15,7 @@ const especialidademedicoRoutes: Routes = [
                 component: EspecialidadeMedicoCreateComponent
             },
             {
-                path: "delete",
+                path: "delete/:id",
                 component: EspecialidadeMedicoDeleteComponent
             },
             {

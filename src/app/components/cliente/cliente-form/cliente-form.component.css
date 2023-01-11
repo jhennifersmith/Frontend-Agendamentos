@@ -4,6 +4,10 @@ mat-card {
     margin-bottom: 1rem;
 }
 
+mat-card-title {
+    padding-left: 1rem;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -19,6 +23,10 @@ mat-form-field {
 mat-card-title {
     text-align: left;
     margin-left: 1rem;
+}
+
+.buttons {
+    padding-left: 1rem;
 }
 
 .buttons button {

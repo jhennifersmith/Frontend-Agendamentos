@@ -4,6 +4,12 @@ mat-card {
     margin-bottom: 1rem;
 }
 
+mat-card-title {
+    padding-left: 1rem;
+    text-align: left;
+    margin-left: 1rem;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -22,16 +28,16 @@ mat-form-field {
     height: 5rem;
 }
 
-mat-card-title {
-    text-align: left;
-    margin-left: 1rem;
-}
 .input-idEspecialidade button {
     background-color: #8C914E;
 }
 
 .input-idMedico button {
     background-color: #8C914E;
+}
+
+.buttons {
+    padding-left: 1rem;
 }
 
 .buttons button {

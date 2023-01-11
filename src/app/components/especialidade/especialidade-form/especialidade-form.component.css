@@ -4,27 +4,32 @@ mat-card {
     margin-bottom: 1rem;
 }
 
+mat-card-title {
+    padding-left: 1rem;
+    text-align: left;
+    margin-left: 1rem;
+}
+
 form {
     display: flex;
     flex-direction: column;
     padding: 1rem;
 }
 
-#nome{
+#nome {
     padding: 0.5rem;
     width: 25rem;
     height: 5rem;
 }
 
-#descricao{
+#descricao {
     padding: 0.5rem;
     width: 25rem;
     height: 6rem;
 }
 
-mat-card-title {
-    text-align: left;
-    margin-left: 1rem;
+.buttons {
+    padding-left: 1rem;
 }
 
 .buttons button {

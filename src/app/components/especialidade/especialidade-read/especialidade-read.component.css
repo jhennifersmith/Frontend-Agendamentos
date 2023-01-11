@@ -1,3 +1,8 @@
+.buttons button {
+    margin-bottom: 1rem;
+    background-color: #8C914E;
+}
+
 mat-card {
     padding: 1rem;
     background-color: #FAFFBD;

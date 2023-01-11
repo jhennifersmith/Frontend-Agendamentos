@@ -4,15 +4,17 @@ mat-card {
     margin-bottom: 1rem;
 }
 
-form {
+mat-card-title {
+    padding-left: 1rem;
+}
+
+
+.medico-search {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding-left: 1rem;
 }
-.cliente-search {
-    display: flex;
-    flex-direction: column;
-}
+
 mat-form-field {
     padding: 0.5rem;
     width: 25rem;
@@ -24,6 +26,9 @@ mat-card-title {
     margin-left: 1rem;
 }
 
+.buttons {
+    padding-left: 1rem;
+}
 
 .buttons button {
     margin-left: 1rem;
