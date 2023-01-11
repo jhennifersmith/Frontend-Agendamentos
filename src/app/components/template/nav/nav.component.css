@@ -1,3 +1,16 @@
+mat-sidenav-container {
+    background-color: #8C914E;
+}
+
+html{
+    margin-top:0;
+    padding-top:0;
+}
+body{
+    margin-top:0;
+    padding-top:0;
+}
+
 .sidenav {
     background-color: #8C914E;
 }

@@ -1,6 +1,14 @@
+* {
+    box-sizing: border-box;
+  }
+
+mat-toolbar {
+    display:flex;
+    justify-content: center
+}
 .header {
-    display: flex;
-    align-items: center;
+    margin: 0;
+    padding: 0;
     background-color: #8C914E;
 }
 
@@ -12,10 +20,12 @@
 }
 
 .header .logo{
-    max-height: 32px;
+    max-height: 2rem;
 }
 
-.header .tittle-group{
-    padding-left: 20px;
+.title-group {
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.5em;
 }
 

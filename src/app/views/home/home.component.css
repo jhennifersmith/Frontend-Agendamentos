@@ -1,7 +1,8 @@
-.home .title {
-    font-size: 1.3rem;
+mat-card {
+    background-color: #FAFFBD;
 }
 
-.home .subtitle {
-    font-size: 1rem;
+img {
+    height: 30em;
+    width: 20em;
 }
