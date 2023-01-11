@@ -4,37 +4,45 @@
       <div class="medico-cadastro">
         <div formGroupName="pessoa">
           <mat-form-field>
-            <input matInput placeholder="Nome" id="nome" formControlName="nome" />
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Nome" id="nome" formControlName="nome" required/>
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="Data de Nascimento" id="dataNascimento" formControlName="dataNascimento" />
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput placeholder="Data de Nascimento" id="dataNascimento" formControlName="dataNascimento" required/>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Sexo</mat-label>
-            <mat-select formControlName="sexo">
+            <mat-select formControlName="sexo" required>
               <mat-option value="FEM">Feminino</mat-option>
               <mat-option value="MASC">Masculino</mat-option>
               <mat-option value="INDEF">Indefinido</mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="CPF" id="cpf" formControlName="cpf" />
+            <mat-label>CPF</mat-label>
+            <input matInput placeholder="CPF" id="cpf" formControlName="cpf" required/>
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="Altura" id="altura" formControlName="altura" />
+            <mat-label>Altura</mat-label>
+            <input matInput placeholder="Altura" id="altura" formControlName="altura" required />
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="Peso" id="peso" formControlName="peso" />
+            <mat-label>Peso</mat-label>
+            <input matInput placeholder="Peso" id="peso" formControlName="peso" required/>
           </mat-form-field>
         </div>
         <mat-form-field>
-          <input matInput id="crm" placeholder="CRM" formControlName="crm" />
+          <mat-label>CRM</mat-label>
+          <input matInput id="crm" placeholder="CRM" formControlName="crm" required/>
         </mat-form-field>
         <mat-form-field>
-          <input matInput id="dataCriacao" placeholder="Data de Criação" formControlName="dataCriacao" />
+          <mat-label>Data de criação</mat-label>
+          <input matInput id="dataCriacao" placeholder="Data de Criação" formControlName="dataCriacao" type="datetime-local" required/>
         </mat-form-field>
         <mat-form-field>
-          <input matInput id="Data de exclusão" placeholder="Data de Exclusão" formControlName="dataExclusao" />
+          <mat-label>Data de exclusão</mat-label>
+          <input matInput id="Data de exclusão" placeholder="Data de Exclusão" formControlName="dataExclusao" type="datetime-local"/>
         </mat-form-field>
       </div>
     </form>

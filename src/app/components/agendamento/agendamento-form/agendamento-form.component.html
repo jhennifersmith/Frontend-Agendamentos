@@ -3,10 +3,12 @@
     <form>
         <div class="row1">
             <mat-form-field>
-                <input matInput placeholder="Id do cliente" [(ngModel)]="agendamentoDTO.clienteId" name="clienteId">
+                <mat-label>Id do cliente</mat-label>
+                <input matInput placeholder="Id do cliente" [(ngModel)]="agendamentoDTO.clienteId" name="clienteId" type="number" min="1">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Id do médico" [(ngModel)]="agendamentoDTO.medicoId" name="medicoId">
+                <mat-label>Id do médico</mat-label>
+                <input matInput placeholder="Id do médico" [(ngModel)]="agendamentoDTO.medicoId" name="medicoId" type="number" min="1">
             </mat-form-field>
         </div>
 
@@ -20,17 +22,20 @@
                 </mat-select>
             </mat-form-field>
             <mat-form-field>
+                <mat-label>Valor da consulta</mat-label>
                 <input matInput placeholder="Valor da consulta" [(ngModel)]="agendamentoDTO.valor" name="valor">
             </mat-form-field>
         </div>
 
         <div class="row3">
             <mat-form-field>
-                <input matInput placeholder="Data de abertura" [(ngModel)]="agendamentoDTO.dataAbertura"
+                <mat-label>Data de abertura</mat-label>
+                <input matInput placeholder="Data de abertura" [(ngModel)]="agendamentoDTO.dataAbertura" type="datetime-local"
                     name="dataAbertura">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Data da consulta" [(ngModel)]="agendamentoDTO.dataConsulta"
+                <mat-label>Data da consulta</mat-label>
+                <input matInput placeholder="Data da consulta" [(ngModel)]="agendamentoDTO.dataConsulta" type="datetime-local"
                     name="dataConsulta">
             </mat-form-field>
         </div>

@@ -1,11 +1,13 @@
 <mat-card>
     <mat-card-title>Alterar especialidade</mat-card-title>
     <form>
-        <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="especialidade.nome" name="nome">
+        <mat-form-field id="nome">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Nome" [(ngModel)]="especialidade.nome" name="nome"required>
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Descrição" [(ngModel)]="especialidade.descricao" name="descricao">
+        <mat-form-field id="descricao">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput placeholder="Descrição" [(ngModel)]="especialidade.descricao" name="descricao" required></textarea>
         </mat-form-field>
     </form>
     <div class="buttons">

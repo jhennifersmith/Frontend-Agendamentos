@@ -4,16 +4,18 @@
     <div class="cliente-cadastro">
       <div formGroupName="pessoa">
         <mat-form-field>
-          <input matInput placeholder="Nome" id="nome" formControlName="nome" />
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Nome" id="nome" formControlName="nome" required />
         </mat-form-field>
 
         <mat-form-field>
-          <input matInput placeholder="Data de Nascimento" id="dataNascimento" formControlName="dataNascimento" />
+          <mat-label>Data de nascimento</mat-label>
+          <input matInput placeholder="Data de Nascimento" type="datetime-local" id="dataNascimento" formControlName="dataNascimento" required/>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>Sexo</mat-label>
-          <mat-select formControlName="sexo">
+          <mat-select formControlName="sexo" required>
             <mat-option value="FEM">Feminino</mat-option>
             <mat-option value="MASC">Masculino</mat-option>
             <mat-option value="INDEF">Indefinido</mat-option>
@@ -21,31 +23,38 @@
         </mat-form-field>
 
         <mat-form-field>
-          <input matInput placeholder="CPF" id="cpf" formControlName="cpf" />
+          <mat-label>CPF</mat-label>
+          <input matInput placeholder="CPF" id="cpf" formControlName="cpf" required/>
         </mat-form-field>
 
         <mat-form-field>
-          <input matInput placeholder="Altura" id="altura" formControlName="altura" />
+          <mat-label>Altura</mat-label>
+          <input matInput placeholder="Altura" id="altura" formControlName="altura" required />
         </mat-form-field>
 
         <mat-form-field>
-          <input matInput placeholder="Peso" id="peso" formControlName="peso" />
+          <mat-label>Peso</mat-label>
+          <input matInput placeholder="Peso" id="peso" formControlName="peso" required />
         </mat-form-field>
       </div>
 
       <mat-form-field>
-        <input matInput id="dataCriacao" placeholder="Data de Criação" formControlName="dataCriacao" />
+        <mat-label>Data de criação</mat-label>
+        <input matInput id="dataCriacao" type="datetime-local" placeholder="Data de Criação" formControlName="dataCriacao" required/>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput id="Data de exclusão" placeholder="Data de Exclusão" formControlName="dataExclusao" />
+        <mat-label>Data de exclusão</mat-label>
+        <input matInput id="Data de exclusão" type="datetime-local" placeholder="Data de Exclusão" formControlName="dataExclusao" />
       </mat-form-field>
 
       <div class="array-telefone">
         <div formArrayName="telefones">
           <ng-container *ngFor="let item of telefone.controls; let indiceTelefone = index">
             <div [formGroupName]="indiceTelefone">
-              <input formControlName="numero" />
+              <mat-form-field>
+                <input #input matInput type="tel" formControlName="numero" />
+              </mat-form-field>
             </div>
           </ng-container>
           <ng-container *ngIf="telefone.controls.length === 0">
@@ -53,7 +62,10 @@
         </div>
       </div>
       <mat-form-field>
-        <input #input matInput type="text" placeholder="Telefone" />
+        <mat-label>Telefone</mat-label>
+        <input #input matInput type="text" placeholder="(00)00000-0000" required/>
+        <mat-icon matSuffix>phone</mat-icon>
+        <mat-hint>Inclua o DDD </mat-hint>
       </mat-form-field>
       <button mat-raised-button (click)="adicionarAoArray(input.value)">Adicionar</button>
 
@@ -61,7 +73,9 @@
         <div formArrayName="emails">
           <ng-container *ngFor="let item of email.controls; let indiceEmail = index">
             <div [formGroupName]="indiceEmail">
-              <input formControlName="endereco" />
+              <mat-form-field>
+                <input matInput type="text" formControlName="endereco" />
+              </mat-form-field>
             </div>
           </ng-container>
           <ng-container *ngIf="email.controls.length === 0">
@@ -69,7 +83,8 @@
         </div>
       </div>
       <mat-form-field>
-        <input #inputEmail matInput type="text" placeholder="Email" />
+        <mat-label>Email</mat-label>
+        <input #inputEmail matInput type="email" placeholder="janedoe@email.com" />
       </mat-form-field>
       <button mat-raised-button (click)="adicionarAoArrayEmail(inputEmail.value)">Adicionar</button>
 
@@ -79,7 +94,6 @@
     <button mat-raised-button (click)="save()">
       Salvar
     </button>
-    <!--ngsubmit-->
     <button mat-raised-button (click)="cancel()">
       Cancelar
     </button>

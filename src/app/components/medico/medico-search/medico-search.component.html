@@ -3,11 +3,9 @@
   <form>
     <div class="medico-search">
       <mat-form-field>
+        <mat-label>Nome</mat-label>
         <input matInput placeholder="Nome" id="nome" [(ngModel)]="medicoFilter.nome" name="nome" />
       </mat-form-field>
-      <!-- <mat-form-field>
-        <input matInput placeholder="Sexo" id="sexo" [(ngModel)]="medicoFilter.sexo" name="sexo" />
-      </mat-form-field> -->
       <mat-form-field appearance="fill">
         <mat-label>Sexo</mat-label>
         <mat-select [(value)]="medicoFilter.sexo">
@@ -17,16 +15,18 @@
         </mat-select>
       </mat-form-field>
       <mat-form-field>
-
+        <mat-label>CPF</mat-label>
         <input matInput placeholder="CPF" id="cpf" [(ngModel)]="medicoFilter.cpf" name="cpf" />
       </mat-form-field>
       <mat-form-field>
-        <input matInput id="dataCriacaoInicio" placeholder="Data de Criação Inicio"
-          [(ngModel)]="medicoFilter.dataCriacaoInicio" name="dataCriacaoInicio" />
+        <mat-label>Data de criação inicial</mat-label>
+        <input matInput id="dataCriacaoInicio" placeholder="Data de criação inicial"
+          [(ngModel)]="medicoFilter.dataCriacaoInicio" name="dataCriacaoInicio" type="datetime-local"/>
       </mat-form-field>
       <mat-form-field>
-        <input matInput id="dataCriacaoFim" placeholder="Data de Criação Fim" [(ngModel)]="medicoFilter.dataCriacaoFim"
-          name="dataCriacaoFim" />
+        <mat-label>Data de criação final</mat-label>
+        <input matInput id="dataCriacaoFim" placeholder="Data de criação final" [(ngModel)]="medicoFilter.dataCriacaoFim"
+          name="dataCriacaoFim" type="datetime-local" />
       </mat-form-field>
     </div>
   </form>

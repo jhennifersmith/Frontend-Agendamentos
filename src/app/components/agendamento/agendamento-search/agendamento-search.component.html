@@ -3,34 +3,42 @@
     <form>
         <div class="agendamento-search">
             <mat-form-field>
+                <mat-label>Nome do cliente</mat-label>
                 <input matInput placeholder="Nome do Cliente" id="nomeCliente"
                     [(ngModel)]="agendamentoFilter.nomeCliente" name="nomeCliente" />
             </mat-form-field>
             <mat-form-field>
+                <mat-label>Nome do médico</mat-label>
                 <input matInput placeholder="Nome do Médico" id="nomeMedico" [(ngModel)]="agendamentoFilter.nomeMedico"
                     name="nomeMedico" />
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Data Abertura Inicial" id="dataAberturaInicio"
+                <mat-label>Data de abertura inicial</mat-label>
+                <input matInput placeholder="Data Abertura Inicial" id="dataAberturaInicio" type="datetime-local"
                     [(ngModel)]="agendamentoFilter.dataAberturaInicio" name="dataAberturaInicio" />
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Data Abertura Final" id="dataAberturaFim"
+                <mat-label>Data de abertura final</mat-label>
+                <input matInput placeholder="Data Abertura Final" id="dataAberturaFim" type="datetime-local"
                     [(ngModel)]="agendamentoFilter.dataAberturaFim" name="dataAberturaFim" />
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Data Consulta Inicial" id="dataConsultaInicio"
+                <mat-label>Data de consulta inicial</mat-label>
+                <input matInput placeholder="Data Consulta Inicial" id="dataConsultaInicio" type="datetime-local"
                     [(ngModel)]="agendamentoFilter.dataConsultaInicio" name="dataConsultaInicio" />
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Data Consulta Final" id="dataConsultaFim"
+                <mat-label>Data de consulta final</mat-label>
+                <input matInput placeholder="Data Consulta Final" id="dataConsultaFim" type="datetime-local"
                     [(ngModel)]="agendamentoFilter.dataConsultaFim" name="dataConsultaFim" />
             </mat-form-field>
             <mat-form-field>
+                <mat-label>Valor inicial</mat-label>
                 <input matInput placeholder="Valor inicial" id="valorInicio" [(ngModel)]="agendamentoFilter.valorInicio"
                     name="valorInicio" />
             </mat-form-field>
             <mat-form-field>
+                <mat-label>Valor final</mat-label>
                 <input matInput placeholder="Valor final" id="valorFim" [(ngModel)]="agendamentoFilter.valorFim"
                     name="valorFim" />
             </mat-form-field>

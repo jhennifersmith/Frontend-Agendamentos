@@ -1,92 +1,100 @@
 <mat-card>
-    <mat-card-title>Filtrar Especialidade</mat-card-title>
-    <form [formGroup]="especialidadeMedicoFormGroup">
-        <div class="array-idMedico">
-            <div formArrayName="idMedicos">
-                <ng-container *ngFor="let item of idMedico.controls; let indiceIdMedico = index">
-                    <div [formGroupName]="indiceIdMedico">
-                        <input formControlName="idMedico" />
-                    </div>
-                </ng-container>
-                <ng-container *ngIf="idMedico.controls.length === 0">
-                </ng-container>
-            </div>
-        </div>
-        <div class="input-idMedico">
+  <mat-card-title>Filtrar Especialidade</mat-card-title>
+  <form [formGroup]="especialidadeMedicoFormGroup">
+    <div class="array-idMedico">
+      <div formArrayName="idMedicos">
+        <ng-container *ngFor="let item of idMedico.controls; let indiceIdMedico = index">
+          <div [formGroupName]="indiceIdMedico">
             <mat-form-field>
-                <input #input matInput type="text" placeholder="Id Médico" />
+              <mat-label>Id do médico</mat-label>
+              <input matInput formControlName="idMedico" type="number" min="1"/>
             </mat-form-field>
-            <button mat-raised-button (click)="adicionarAoArray(+input.value)">Adicionar</button>
-        </div>
-
-
-        <div class="array-idEspecialidade">
-            <div formArrayName="idEspecialidades">
-                <ng-container *ngFor="let item of idEspecialidade.controls; let indiceIdEspecialidade = index">
-                    <div [formGroupName]="indiceIdEspecialidade">
-                        <input formControlName="idEspecialidade" />
-                    </div>
-                </ng-container>
-                <ng-container *ngIf="idEspecialidade.controls.length === 0">
-                </ng-container>
-            </div>
-        </div>
-        <div class="input-idEspecialidade">
-            <mat-form-field>
-                <input #inputIdEspecialidade matInput type="text" placeholder="Id Especialidade" />
-            </mat-form-field>
-            <button mat-raised-button
-                (click)="adicionarAoArrayIdEspecialidade(+inputIdEspecialidade.value)">Adicionar</button>
-        </div>
-    </form>
-    <div class="buttons">
-        <button mat-raised-button (click)="searchEspecialidadeMedico()">
-            Filtrar
-        </button>
-        <button mat-raised-button (click)="navigateToEspecialidadeMedicoCreate()">
-            Nova Especialidade Médico
-        </button>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="idMedico.controls.length === 0">
+        </ng-container>
+      </div>
     </div>
+    <div class="input-idMedico">
+      <mat-form-field>
+        <mat-label>Id do médico</mat-label>
+        <input #input matInput type="number" placeholder="Id Médico" min="1"/>
+      </mat-form-field>
+      <button mat-raised-button (click)="adicionarAoArray(+input.value)">Adicionar</button>
+    </div>
+
+
+    <div class="array-idEspecialidade">
+      <div formArrayName="idEspecialidades">
+        <ng-container *ngFor="let item of idEspecialidade.controls; let indiceIdEspecialidade = index">
+          <div [formGroupName]="indiceIdEspecialidade">
+            <mat-form-field>
+              <mat-label>Id especialidade</mat-label>
+              <input matInput formControlName="idEspecialidade" type="number" min="1" />
+            </mat-form-field>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="idEspecialidade.controls.length === 0">
+        </ng-container>
+      </div>
+    </div>
+    <div class="input-idEspecialidade">
+      <mat-form-field>
+        <mat-label>Id especialidade</mat-label>
+        <input #inputIdEspecialidade matInput type="number" min="1" placeholder="Id Especialidade" />
+      </mat-form-field>
+      <button mat-raised-button
+        (click)="adicionarAoArrayIdEspecialidade(+inputIdEspecialidade.value)">Adicionar</button>
+    </div>
+  </form>
+  <div class="buttons">
+    <button mat-raised-button (click)="searchEspecialidadeMedico()">
+      Filtrar
+    </button>
+    <button mat-raised-button (click)="navigateToEspecialidadeMedicoCreate()">
+      Nova Especialidade Médico
+    </button>
+  </div>
 </mat-card>
 
 <div class="mat-elevation-z4" id="gridEspecialidadeMedico">
 
-    <table mat-table [dataSource]="especialidadeMedicosGridDTO">
-      <!-- Id Column -->
-      <ng-container matColumnDef="idEspecialidade">
-        <th mat-header-cell *matHeaderCellDef>Id Especialidade</th>
-        <td mat-cell *matCellDef="let row">{{row.idEspecialidade}}</td>
-      </ng-container>
-  
-      <!-- Name Column -->
-      <ng-container matColumnDef="descricao">
-        <th mat-header-cell *matHeaderCellDef>Descricao</th>
-        <td mat-cell *matCellDef="let row">{{row.descricao}}</td>
-      </ng-container>
-  
-      <ng-container matColumnDef="idMedico">
-        <th mat-header-cell *matHeaderCellDef>Id Médico</th>
-        <td mat-cell *matCellDef="let row">{{row.idMedico}}</td>
-      </ng-container>
-  
-      <ng-container matColumnDef="nomeMedico">
-        <th mat-header-cell *matHeaderCellDef>Nome Medico</th>
-        <td mat-cell *matCellDef="let row">{{row.nome}}</td>
-      </ng-container>
-      <!--Action Column-->
-      <ng-container matColumnDef="acoes">
-        <th mat-header-cell *matHeaderCellDef>Ações</th>
-        <td mat-cell *matCellDef="let row" >
-          <a routerLink="/especialidade-medico/delete/{{ row.id }}">
-            <i class="material-icons">
-              delete
-            </i>
-          </a>
-        </td>
-  
-      </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  </div>
+  <table mat-table [dataSource]="especialidadeMedicosGridDTO">
+    <!-- Id Column -->
+    <ng-container matColumnDef="idEspecialidade">
+      <th mat-header-cell *matHeaderCellDef>Id Especialidade</th>
+      <td mat-cell *matCellDef="let row">{{row.idEspecialidade}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="descricao">
+      <th mat-header-cell *matHeaderCellDef>Descricao</th>
+      <td mat-cell *matCellDef="let row">{{row.descricao}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="idMedico">
+      <th mat-header-cell *matHeaderCellDef>Id Médico</th>
+      <td mat-cell *matCellDef="let row">{{row.idMedico}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nomeMedico">
+      <th mat-header-cell *matHeaderCellDef>Nome Medico</th>
+      <td mat-cell *matCellDef="let row">{{row.nome}}</td>
+    </ng-container>
+    <!--Action Column-->
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td mat-cell *matCellDef="let row">
+        <a routerLink="/especialidade-medico/delete/{{ row.id }}">
+          <i class="material-icons">
+            delete
+          </i>
+        </a>
+      </td>
+
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

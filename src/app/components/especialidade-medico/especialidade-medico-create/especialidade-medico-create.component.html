@@ -2,20 +2,24 @@
     <mat-card-title>Nova especialidade médico</mat-card-title>
     <form>
         <mat-form-field>
-            <input matInput placeholder="Id do médico" [(ngModel)]="especialidadeMedicoDTO.medicoId" name="medicoId">
+            <mat-label>Id do médico</mat-label>
+            <input matInput placeholder="Id do médico" [(ngModel)]="especialidadeMedicoDTO.medicoId" name="medicoId"
+                type="number" min="1">
         </mat-form-field>
+
         <mat-form-field>
-            <input matInput placeholder="Id da Especialidade" [(ngModel)]="especialidadeMedicoDTO.especialidadeId" name="especialdiadeId">
+            <mat-label>Id da especialidade</mat-label>
+            <input matInput placeholder="Id da Especialidade" [(ngModel)]="especialidadeMedicoDTO.especialidadeId"
+                name="especialdiadeId" type="number" min="1">
         </mat-form-field>
     </form>
     <div class="buttons">
         <button mat-raised-button (click)="createEspecialidadeMedico()">
             Salvar
         </button>
-        
+
         <button mat-raised-button (click)="cancel()">
             Cancelar
         </button>
     </div>
 </mat-card>
-

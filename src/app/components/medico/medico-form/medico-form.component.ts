@@ -54,7 +54,7 @@ export class MedicoFormComponent implements OnInit {
       pessoa: this.fb.group({
         nome: [''],
         dataNascimento: [''],
-        sexo: ['FEM'],
+        sexo: [''],
         cpf: [''],
         altura: [''],
         peso: ['']

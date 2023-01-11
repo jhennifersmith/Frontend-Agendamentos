@@ -10,10 +10,16 @@ form {
     padding: 1rem;
 }
 
-mat-form-field {
+#nome{
     padding: 0.5rem;
     width: 25rem;
     height: 5rem;
+}
+
+#descricao{
+    padding: 0.5rem;
+    width: 25rem;
+    height: 6rem;
 }
 
 mat-card-title {
