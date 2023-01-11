@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EspecialidadeMedicoCrudComponent } from '../../views/especialidade-medico-crud/especialidade-medico-crud.component';

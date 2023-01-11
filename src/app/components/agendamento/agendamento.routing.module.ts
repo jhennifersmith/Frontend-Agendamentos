@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AgendamentoCrudComponent } from '../../views/agendamento-crud/agendamento-crud.component';
-import { AgendamentoReadComponent } from './agendamento-read/agendamento-read.component';
 import { AgendamentoFormComponent } from './agendamento-form/agendamento-form.component';
 import { AgendamentoSearchComponent } from './agendamento-search/agendamento-search.component';
 
