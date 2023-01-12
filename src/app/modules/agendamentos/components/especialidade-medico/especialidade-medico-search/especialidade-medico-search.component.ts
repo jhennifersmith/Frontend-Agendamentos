@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PageEvent } from '@angular/material/paginator';
+import { EspecialidadeMedicoDTO } from '../../../models/especialidade-medico-dto.model';
 
 @Component({
   selector: 'app-especialidade-medico-search',
@@ -19,6 +20,8 @@ export class EspecialidadeMedicoSearchComponent implements OnInit {
 
   especialidadeMedicoFilter: EspecialidadeMedicoFilter;
 
+  especialidadeMedicosDTO: EspecialidadeMedicoDTO[];
+
   displayedColumns = ['idEspecialidade', 'descricao', 'idMedico', 'nomeMedico', 'acoes']
   constructor(
     private fb: FormBuilder,
@@ -31,6 +34,7 @@ export class EspecialidadeMedicoSearchComponent implements OnInit {
     this.especialidadeMedicoFilter = new EspecialidadeMedicoFilter()
     this.especialidadeMedicoFilter.idMedicos = new Array<number>();
     this.especialidadeMedicoFilter.idEspecialidades = new Array<number>();
+    
   }
 
   get idMedico() {
