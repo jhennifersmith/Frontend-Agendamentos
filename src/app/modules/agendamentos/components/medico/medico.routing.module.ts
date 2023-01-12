@@ -7,7 +7,7 @@ import { MedicoFormComponent } from './medico-form/medico-form.component';
 
 const medicoRoutes: Routes = [
     {
-        path: "medico",
+        path: "",
         component: MedicoCrudComponent,
         children: [
             {

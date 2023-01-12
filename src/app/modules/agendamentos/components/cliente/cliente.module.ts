@@ -5,9 +5,6 @@ import { ClienteCrudComponent } from './../../views/cliente-crud/cliente-crud.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -21,7 +18,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { AppRoutingModule } from 'src/app/modules/agendamentos/app-routing.module';
 import { ClienteService } from 'src/app/modules/agendamentos/services/cliente.service';
 import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 import {MatSelectModule} from '@angular/material/select';
@@ -31,16 +27,12 @@ import {MatSelectModule} from '@angular/material/select';
     imports: [
         CommonModule,
         FormsModule,
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
         MatToolbarModule,
         MatSidenavModule,
         MatIconModule,
         MatListModule,
         MatButtonModule,
         MatCardModule,
-        HttpClientModule,
         MatSnackBarModule,
         MatFormFieldModule,
         MatInputModule,

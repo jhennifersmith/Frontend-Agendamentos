@@ -7,7 +7,7 @@ import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 
 const clienteRoutes: Routes = [
     {
-        path: "cliente",
+        path: "",
         component: ClienteCrudComponent,
         children: [
             {

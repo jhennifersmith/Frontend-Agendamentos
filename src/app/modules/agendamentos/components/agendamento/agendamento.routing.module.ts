@@ -7,7 +7,7 @@ import { AgendamentoSearchComponent } from './agendamento-search/agendamento-sea
 
 const agendamentoRoutes: Routes = [
     {
-        path: "agendamento",
+        path: "",
         component: AgendamentoCrudComponent,
         children: [
             {

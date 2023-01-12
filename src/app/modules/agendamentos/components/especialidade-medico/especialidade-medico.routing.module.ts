@@ -7,7 +7,7 @@ import { EspecialidadeMedicoDeleteComponent } from './especialidade-medico-delet
 
 const especialidademedicoRoutes: Routes = [
     {
-        path: "especialidade-medico",
+        path: "",
         component: EspecialidadeMedicoCrudComponent,
         children: [
             {

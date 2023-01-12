@@ -7,7 +7,7 @@ import { EspecialidadeReadComponent } from './especialidade-read/especialidade-r
 
 const especialidadeRoutes: Routes = [
     {
-        path: "especialidade",
+        path: "",
         component: EspecialidadeCrudComponent,
         children: [
             {

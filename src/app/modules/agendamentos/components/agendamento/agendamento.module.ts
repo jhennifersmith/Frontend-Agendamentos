@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AgendamentoCrudComponent } from './../../views/agendamento-crud/agendamento-crud.component';
 import { AgendamentoRoutingModule } from './agendamento.routing.module';
@@ -5,9 +6,6 @@ import { AgendamentoSearchComponent } from './agendamento-search/agendamento-sea
 import { AgendamentoService } from 'src/app/modules/agendamentos/services/agendamento.service';
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -21,7 +19,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { AppRoutingModule } from 'src/app/modules/agendamentos/app-routing.module';
 import { AgendamentoFormComponent } from './agendamento-form/agendamento-form.component';
 import { MatSelectModule } from '@angular/material/select';
 
@@ -30,16 +27,12 @@ import { MatSelectModule } from '@angular/material/select';
         CommonModule,
         AgendamentoRoutingModule,
         FormsModule,
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
         MatToolbarModule,
         MatSidenavModule,
         MatIconModule,
         MatListModule,
         MatButtonModule,
         MatCardModule,
-        HttpClientModule,
         MatSnackBarModule,
         MatFormFieldModule,
         MatInputModule,
@@ -48,7 +41,8 @@ import { MatSelectModule } from '@angular/material/select';
         MatSortModule,
         ReactiveFormsModule,
         MatRadioModule,
-        MatSelectModule
+        MatSelectModule,
+        RouterModule
     ],
     exports: [],
     declarations: [
