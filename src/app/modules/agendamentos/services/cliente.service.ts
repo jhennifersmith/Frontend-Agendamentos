@@ -26,7 +26,6 @@ export class ClienteService {
 
   create(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(this.baseUrl, cliente).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -41,7 +40,6 @@ export class ClienteService {
   readActive(): Observable<Cliente[]> {
     const url = `${this.baseUrl}/get-all-ativos/`
     return this.http.get<Cliente[]>(url).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -49,7 +47,6 @@ export class ClienteService {
   readById(id: number): Observable<Cliente> {
     const url = `${this.baseUrl}/${id}`
     return this.http.get<Cliente>(url).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -57,7 +54,6 @@ export class ClienteService {
   search(clienteFilter: ClienteFilter): Observable<Cliente[]> {
     const url = `${this.baseUrl}/search/`
     return this.http.post<ClienteFilter[]>(url, clienteFilter).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -65,7 +61,6 @@ export class ClienteService {
   update(cliente: Cliente): Observable<Cliente> {
     const url = `${this.baseUrl}/`
     return this.http.put<Cliente>(url, cliente).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -73,7 +68,6 @@ export class ClienteService {
   delete(id: number): Observable<Cliente> {
     const url = `${this.baseUrl}/${id};`
     return this.http.delete<Cliente>(url).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }

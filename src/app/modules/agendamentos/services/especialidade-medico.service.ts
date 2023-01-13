@@ -26,13 +26,11 @@ export class EspecialidadeMedicoService {
 
   create(especialidadeMedicoDTO: EspecialidadeMedicoDTO): Observable<EspecialidadeMedicoDTO> {
     return this.http.post<EspecialidadeMedicoDTO>(this.baseUrl, especialidadeMedicoDTO).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
   read(): Observable<EspecialidadeMedico[]> {
     return this.http.get<EspecialidadeMedico[]>(this.baseUrl).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -40,7 +38,6 @@ export class EspecialidadeMedicoService {
   readById(id: number): Observable<EspecialidadeMedico> {
     const url = `${this.baseUrl}/${id}`
     return this.http.get<EspecialidadeMedico>(url).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -48,7 +45,6 @@ export class EspecialidadeMedicoService {
   delete(id: number): Observable<EspecialidadeMedico> {
     const url = `${this.baseUrl}/${id};`
     return this.http.delete<EspecialidadeMedico>(url).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -56,7 +52,6 @@ export class EspecialidadeMedicoService {
   search(especialidadeMedicoFilter: EspecialidadeMedicoFilter): Observable<EspecialidadeMedicoGridDTO[]> {
     const url = `${this.baseUrl}/search`
     return this.http.post<EspecialidadeMedicoGridDTO[]>(url, especialidadeMedicoFilter).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }

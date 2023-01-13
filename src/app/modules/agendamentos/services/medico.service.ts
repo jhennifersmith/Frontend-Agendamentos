@@ -25,14 +25,12 @@ export class MedicoService {
 
   create(medico: Medico): Observable<Medico> {
     return this.http.post<Medico>(this.baseUrl, medico).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
 
   read(): Observable<Medico[]> {
     return this.http.get<Medico[]>(this.baseUrl).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -40,7 +38,6 @@ export class MedicoService {
   readById(id: number): Observable<Medico> {
     const url = `${this.baseUrl}/${id}`
     return this.http.get<Medico>(url).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -48,7 +45,6 @@ export class MedicoService {
   update(medico: Medico): Observable<Medico> {
     const url = `${this.baseUrl}/`
     return this.http.put<Medico>(url, medico).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -56,7 +52,6 @@ export class MedicoService {
   delete(id: number): Observable<Medico> {
     const url = `${this.baseUrl}/${id};`
     return this.http.delete<Medico>(url).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -64,7 +59,6 @@ export class MedicoService {
   search(medicoFilter: MedicoFilter): Observable<Medico[]> {
     const url = `${this.baseUrl}/search/`
     return this.http.post<MedicoFilter[]>(url, medicoFilter).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }

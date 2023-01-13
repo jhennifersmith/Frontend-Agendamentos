@@ -26,14 +26,12 @@ export class AgendamentoService {
 
   create(agendamentoDTO: AgendamentoDTO): Observable<Agendamento> {
     return this.http.post<Agendamento>(this.baseUrl, agendamentoDTO).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
 
   read(): Observable<Agendamento[]> {
     return this.http.get<Agendamento[]>(this.baseUrl).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -41,7 +39,6 @@ export class AgendamentoService {
   readById(id: number): Observable<AgendamentoDTO> {
     const url = `${this.baseUrl}/${id}`
     return this.http.get<Agendamento>(url).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -49,7 +46,6 @@ export class AgendamentoService {
   update(agendamentoDTO: AgendamentoDTO): Observable<Agendamento> {
     const url = `${this.baseUrl}/`
     return this.http.put<Agendamento>(url, agendamentoDTO).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }
@@ -57,7 +53,6 @@ export class AgendamentoService {
   search(agendamentoFilter: AgendamentoFilter): Observable<AgendamentoGridDTO[]> {
     const url = `${this.baseUrl}/search/`
     return this.http.post<AgendamentoGridDTO[]>(url, agendamentoFilter).pipe(
-      map((obj) => obj),
       catchError( e => this.errorHandler(e))
     );
   }

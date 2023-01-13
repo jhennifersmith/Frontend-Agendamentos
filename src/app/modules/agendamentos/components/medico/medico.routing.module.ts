@@ -19,7 +19,7 @@ const medicoRoutes: Routes = [
                 component: MedicoFormComponent
             },
             {
-                path: "delete",
+                path: "delete/:id",
                 component: MedicoDeleteComponent
             },
             {

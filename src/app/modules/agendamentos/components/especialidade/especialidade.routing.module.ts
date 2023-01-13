@@ -19,7 +19,7 @@ const especialidadeRoutes: Routes = [
                 component: EspecialidadeFormComponent
             },
             {
-                path: "delete",
+                path: "delete/:id",
                 component: EspecialidadeDeleteComponent
             },
             {

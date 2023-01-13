@@ -48,6 +48,7 @@ export class ClienteSearchComponent implements OnInit {
   constructor(private clienteService: ClienteService, private router: Router) { }
 
   ngOnInit(): void {
+    this.searchCliente();
   }
   
   navigateToClienteCreate(){
