@@ -64,7 +64,7 @@
     </div>
   </form>
   <div class="buttons">
-    <button mat-raised-button (click)="save()">
+    <button [disabled]="!medicoFormGroup.valid" mat-raised-button (click)="save()">
       Salvar
     </button>
     <!--ngsubmit-->

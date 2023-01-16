@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-card-title>Novo cliente</mat-card-title>
+  <mat-card-title>Formulário cliente</mat-card-title>
   <form [formGroup]="clienteFormGroup">
     <div class="cliente-cadastro">
       <div formGroupName="pessoa">
@@ -67,8 +67,9 @@
             <div [formGroupName]="indiceTelefone">
               <mat-form-field>
                 <mat-label>Telefone</mat-label>
-                <input #input matInput type="tel" formControlName="numero" />
+                <input #input matInput type="tel" formControlName="numero" readonly />
               </mat-form-field>
+              <button mat-raised-button (click)="removeTelefone(indiceTelefone.valueOf())">Remover</button>
             </div>
           </ng-container>
           <ng-container *ngIf="telefone.controls.length === 0">
@@ -89,8 +90,9 @@
             <div [formGroupName]="indiceEmail">
               <mat-form-field>
                 <mat-label>Email</mat-label>
-                <input matInput type="text" formControlName="endereco" />
+                <input matInput type="email" formControlName="endereco" email readonly/>
               </mat-form-field>
+              <button mat-raised-button (click)="removeEmail(indiceEmail.valueOf())">Remover</button>
             </div>
           </ng-container>
           <ng-container *ngIf="email.controls.length === 0">
@@ -99,14 +101,14 @@
       </div>
       <mat-form-field>
         <mat-label>Email</mat-label>
-        <input #inputEmail matInput type="email" placeholder="janedoe@email.com"/>
+        <input #inputEmail matInput type="text" placeholder="janedoe@email.com"/>
       </mat-form-field>
       <button mat-raised-button (click)="adicionarAoArrayEmail(inputEmail.value)">Adicionar</button>
 
     </div>
   </form>
   <div class="buttons">
-    <button mat-raised-button (click)="save()">
+    <button [disabled]="!clienteFormGroup.valid" mat-raised-button (click)="save()">
       Salvar
     </button>
     <button mat-raised-button (click)="cancel()">

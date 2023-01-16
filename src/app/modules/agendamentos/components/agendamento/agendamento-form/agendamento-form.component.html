@@ -1,21 +1,21 @@
 <mat-card>
     <mat-card-title>Formulário de Agendamento</mat-card-title>
-    <form>
+    <form #f="ngForm">
         <div class="row1">
             <mat-form-field>
                 <mat-label>Id do cliente</mat-label>
-                <input matInput placeholder="Id do cliente" [(ngModel)]="agendamentoDTO.clienteId" name="clienteId" type="number" min="1">
+                <input matInput placeholder="Id do cliente" [(ngModel)]="agendamentoDTO.clienteId" name="clienteId" type="number" min="1" required>
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Id do médico</mat-label>
-                <input matInput placeholder="Id do médico" [(ngModel)]="agendamentoDTO.medicoId" name="medicoId" type="number" min="1">
+                <input matInput placeholder="Id do médico" [(ngModel)]="agendamentoDTO.medicoId" name="medicoId" type="number" min="1" required>
             </mat-form-field>
         </div>
 
         <div class="row2">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" required>
                 <mat-label>Status</mat-label>
-                <mat-select [(value)]="agendamentoDTO.status">
+                <mat-select [(ngModel)]="agendamentoDTO.status" name="status" [(value)]="agendamentoDTO.status" required>
                     <mat-option value="ABER">Aberta</mat-option>
                     <mat-option value="ATEN">Atendida</mat-option>
                     <mat-option value="CANC">Cancelada</mat-option>
@@ -23,7 +23,7 @@
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Valor da consulta</mat-label>
-                <input matInput placeholder="Valor da consulta" [(ngModel)]="agendamentoDTO.valor" name="valor">
+                <input matInput placeholder="Valor da consulta" [(ngModel)]="agendamentoDTO.valor" name="valor" required>
             </mat-form-field>
         </div>
 
@@ -31,18 +31,18 @@
             <mat-form-field>
                 <mat-label>Data de abertura</mat-label>
                 <input matInput placeholder="Data de abertura" [(ngModel)]="agendamentoDTO.dataAbertura" type="datetime-local"
-                    name="dataAbertura">
+                    name="dataAbertura" required>
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Data da consulta</mat-label>
                 <input matInput placeholder="Data da consulta" [(ngModel)]="agendamentoDTO.dataConsulta" type="datetime-local"
-                    name="dataConsulta">
+                    name="dataConsulta" required>
             </mat-form-field>
         </div>
     </form>
 
     <div class="buttons">
-        <button mat-raised-button (click)="save()">
+        <button [disabled]="!f.valid" mat-raised-button (click)="save()">
             Salvar
         </button>
 

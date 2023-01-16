@@ -1,8 +1,10 @@
+import { Email } from './../../../models/email.model';
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Cliente } from '../../../models/cliente.model';
 import { ClienteService } from '../../../services/cliente.service';
+import { NumberInput } from '@angular/cdk/coercion';
 
 @Component({
   selector: 'app-cliente-form',
@@ -10,8 +12,10 @@ import { ClienteService } from '../../../services/cliente.service';
   styleUrls: ['./cliente-form.component.css']
 })
 export class ClienteFormComponent implements OnInit {
+
+
   clienteFormGroup!: FormGroup;
-  cliente: Cliente;
+  cliente: Cliente; 
 
   constructor(
     private clienteService: ClienteService,
@@ -60,20 +64,23 @@ export class ClienteFormComponent implements OnInit {
   createForm(cliente: Cliente) {
     this.clienteFormGroup = this.fb.group({
       pessoa: this.fb.group({
-        nome: [''],
-        dataNascimento: [''],
-        sexo: ['FEM'], 
-        cpf: [''],
-        altura: [''],
-        peso: [''],
+        nome: ['', [Validators.required, Validators.minLength(3)]],
+        dataNascimento: ['', Validators.required],
+        sexo: [null, Validators.required], 
+        cpf: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+        altura: ['', Validators.required],
+        peso: ['', Validators.required],
       }),
       id: [''],
-      telefones: this.fb.array([]),
+      telefones: this.fb.array([], [Validators.required]),
       emails: this.fb.array([]),
-      dataCriacao: [''],
+      dataCriacao: ['', Validators.required],
       dataExclusao: ['']
     });
   }
+
+
+ 
 
   adicionarAoArray(numero: string) {
     this.telefone.push(
@@ -82,6 +89,11 @@ export class ClienteFormComponent implements OnInit {
       })
     );
   }
+
+  removeTelefone(indiceTelefone: number) {
+    this.telefone.removeAt(indiceTelefone);
+    }
+
   adicionarAoArrayEmail(endereco: string) {
     this.email.push(
       this.fb.group({
@@ -89,6 +101,11 @@ export class ClienteFormComponent implements OnInit {
       })
     );
   }
+
+  removeEmail(indiceEmail: number) {
+    this.email.removeAt(indiceEmail);
+  }
+
 
   updateCliente(): void {
     this.clienteService.update(this.clienteFormGroup.value).subscribe(() => {
@@ -101,9 +118,8 @@ export class ClienteFormComponent implements OnInit {
     console.log(this.clienteFormGroup.value);
     this.clienteService.create(this.clienteFormGroup.value).subscribe(() => {
       this.clienteService.showMessage('Cliente criado!')
-      this.router.navigate(['/cliente']);
-
-    })
+      this.router.navigate(['/cliente'])
+    });
   }
 
   cancel(): void {
