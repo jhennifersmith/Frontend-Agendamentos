@@ -1,3 +1,4 @@
+import { ListResponse } from './../models/list-response.model';
 import { EspecialidadeMedicoDTO } from '../models/especialidade-medico-dto.model';
 import { EspecialidadeMedico } from '../models/especialidade-medico.model';
 import { HttpClient } from '@angular/common/http';
@@ -49,9 +50,9 @@ export class EspecialidadeMedicoService {
     );
   }
 
-  search(especialidadeMedicoFilter: EspecialidadeMedicoFilter): Observable<EspecialidadeMedicoGridDTO[]> {
+  search(especialidadeMedicoFilter: EspecialidadeMedicoFilter): Observable<ListResponse<EspecialidadeMedicoGridDTO>> {
     const url = `${this.baseUrl}/search`
-    return this.http.post<EspecialidadeMedicoGridDTO[]>(url, especialidadeMedicoFilter).pipe(
+    return this.http.post<ListResponse<EspecialidadeMedicoGridDTO>>(url, especialidadeMedicoFilter).pipe(
       catchError( e => this.errorHandler(e))
     );
   }

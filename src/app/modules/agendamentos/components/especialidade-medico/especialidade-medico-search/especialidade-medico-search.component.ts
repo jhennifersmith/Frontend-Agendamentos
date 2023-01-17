@@ -54,7 +54,7 @@ export class EspecialidadeMedicoSearchComponent implements OnInit {
   }
 
   pageSizeOptions = [5, 10, 25];
-  length = 50;
+  length = 0;
 
   pageEvent: PageEvent;
 
@@ -92,8 +92,9 @@ export class EspecialidadeMedicoSearchComponent implements OnInit {
 
   searchEspecialidadeMedico() {
     console.log(this.especialidadeMedicoFilter)
-    this.especialidadeMedicoService.search(this.especialidadeMedicoFilter).subscribe(especialidadeMedicosGridDTO => {
-      this.especialidadeMedicosGridDTO = especialidadeMedicosGridDTO
+    this.especialidadeMedicoService.search(this.especialidadeMedicoFilter).subscribe(listResponse => {
+      this.especialidadeMedicosGridDTO = listResponse.list
+      this.length = listResponse.total
     })
   }
 

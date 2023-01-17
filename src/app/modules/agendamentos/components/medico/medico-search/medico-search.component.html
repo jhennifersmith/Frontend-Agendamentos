@@ -106,7 +106,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <mat-paginator [length]="50" [pageSize]=medicoFilter.pageSize [pageSizeOptions]="[5, 10, 25, 100]"
+  <mat-paginator [length]="length" [pageSize]=medicoFilter.pageSize [pageSizeOptions]="[5, 10, 25, 100]"
     (page)="handlePageEvent($event)" aria-label="Select page">
   </mat-paginator>
 </div>

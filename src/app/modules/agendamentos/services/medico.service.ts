@@ -1,3 +1,4 @@
+import { ListResponse } from './../models/list-response.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -56,9 +57,9 @@ export class MedicoService {
     );
   }
 
-  search(medicoFilter: MedicoFilter): Observable<Medico[]> {
+  search(medicoFilter: MedicoFilter): Observable<ListResponse<Medico>> {
     const url = `${this.baseUrl}/search/`
-    return this.http.post<MedicoFilter[]>(url, medicoFilter).pipe(
+    return this.http.post<ListResponse<Medico>>(url, medicoFilter).pipe(
       catchError( e => this.errorHandler(e))
     );
   }

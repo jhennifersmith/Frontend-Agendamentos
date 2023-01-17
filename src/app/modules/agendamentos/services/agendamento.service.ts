@@ -1,4 +1,4 @@
-import { ListReponse } from './../models/list-response.model';
+import { ListResponse } from './../models/list-response.model';
 import { AgendamentoGridDTO } from '../models/agendamento-grid-dto.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -51,9 +51,9 @@ export class AgendamentoService {
     );
   }
 
-  search(agendamentoFilter: AgendamentoFilter): Observable<ListReponse<AgendamentoGridDTO>> {
+  search(agendamentoFilter: AgendamentoFilter): Observable<ListResponse<AgendamentoGridDTO>> {
     const url = `${this.baseUrl}/search/`
-    return this.http.post<ListReponse<AgendamentoGridDTO>>(url, agendamentoFilter).pipe(
+    return this.http.post<ListResponse<AgendamentoGridDTO>>(url, agendamentoFilter).pipe(
       catchError( e => this.errorHandler(e))
     );
   }

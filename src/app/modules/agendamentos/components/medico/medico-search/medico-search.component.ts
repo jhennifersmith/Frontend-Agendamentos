@@ -26,7 +26,7 @@ export class MedicoSearchComponent implements OnInit {
   }
   
   pageSizeOptions = [5, 10, 25];
-  length = 50;
+  length = 0;
 
   pageEvent: PageEvent;
 
@@ -50,9 +50,10 @@ export class MedicoSearchComponent implements OnInit {
   }
 
   searchMedico() {
-    this.medicoService.search(this.medicoFilter).subscribe(medicos => {
-      this.medicos = medicos
-      console.log(medicos)
+    this.medicoService.search(this.medicoFilter).subscribe(listResponse => {
+      this.medicos = listResponse.list
+      this.length = listResponse.total
+      console.log(listResponse.list)
   })}
 
   ngOnInit(): void {

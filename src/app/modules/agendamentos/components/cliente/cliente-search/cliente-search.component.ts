@@ -27,7 +27,7 @@ export class ClienteSearchComponent implements OnInit {
   }
 
   pageSizeOptions = [5, 10, 25];
-  length = 50;
+  length = 0;
 
   pageEvent: PageEvent;
 
@@ -48,16 +48,17 @@ export class ClienteSearchComponent implements OnInit {
   constructor(private clienteService: ClienteService, private router: Router) { }
 
   ngOnInit(): void {
-    this.searchCliente();
+
   }
   
   navigateToClienteCreate(){
     this.router.navigate(['/cliente/create']);
   }
   searchCliente() {
-    this.clienteService.search(this.clienteFilter).subscribe(clientes => {
-      this.clientes = clientes
-      console.log(clientes)
+    this.clienteService.search(this.clienteFilter).subscribe(responseList => {
+      this.clientes = responseList.list
+      this.length = responseList.total
+      console.log(responseList.list)
   })}
 
   cancel() {

@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, EMPTY, map, Observable } from 'rxjs';
 import { ClienteFilter } from '../models/cliente-filter.model';
 import { Cliente } from '../models/cliente.model';
+import { ListResponse } from '../models/list-response.model';
 
 @Injectable({
   providedIn: 'root'
@@ -51,9 +52,9 @@ export class ClienteService {
     );
   }
 
-  search(clienteFilter: ClienteFilter): Observable<Cliente[]> {
+  search(clienteFilter: ClienteFilter): Observable<ListResponse<Cliente>> {
     const url = `${this.baseUrl}/search/`
-    return this.http.post<ClienteFilter[]>(url, clienteFilter).pipe(
+    return this.http.post<ListResponse<Cliente>>(url, clienteFilter).pipe(
       catchError( e => this.errorHandler(e))
     );
   }

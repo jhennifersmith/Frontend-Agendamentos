@@ -21,6 +21,11 @@ mat-card-title {
     margin-left: 1rem;
 }
 
+img {
+    height: 7rem;
+    float: right;
+}
+
 .material-icons {
     color: #de5239;
 }
