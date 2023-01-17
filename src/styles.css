@@ -9,7 +9,7 @@
     appearance: none;
 }
 html, body { height: 100%; }
-body { margin: 0;   background-color: #FAFFBD;}
+body { margin: 0;   background-color: #ffd57b;}
 
 .msg-success{
     background-color: green;

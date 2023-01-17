@@ -1,6 +1,6 @@
 mat-card {
     padding: 1rem;
-    background-color: #FAFFBD;
+    background-color: #ffd57b;
     margin-bottom: 1rem;
 }
 
@@ -29,11 +29,15 @@ mat-form-field {
 }
 
 .input-idEspecialidade button {
-    background-color: #8C914E;
+    background-color: #ff9441;
 }
 
 .input-idMedico button {
-    background-color: #8C914E;
+    background-color: #ff9441;
+}
+
+.material-icons {
+    color: #de5239;
 }
 
 .buttons {
@@ -42,25 +46,25 @@ mat-form-field {
 
 .buttons button {
     margin-left: 1rem;
-    background-color: #8C914E;
+    background-color: #ff9441;
 }
 
 .mat-elevation-z4 {
-    background-color: #8C914E;
+    background-color: #ff9441;
 }
 
 .mat-elevation-z4 {
-    background-color: #8C914E;
+    background-color: #ff9441;
 }
 
 .mat-elevation-z4 table {
-    background-color: #D8DE8E;
+    background-color: #ffad52;
 }
 
 .mat-elevation-z4 table th{
-    background-color: #8C914E;
+    background-color: #ff9441;
 }
 
 mat-paginator {
-    background-color: #8C914E;
+    background-color: #ff9441;
 }

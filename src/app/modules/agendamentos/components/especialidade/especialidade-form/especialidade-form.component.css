@@ -1,6 +1,6 @@
 mat-card {
     padding: 1rem;
-    background-color: #FAFFBD;
+    background-color: #ffd57b;
     margin-bottom: 1rem;
 }
 
@@ -34,5 +34,5 @@ form {
 
 .buttons button {
     margin-left: 1rem;
-    background-color: #8C914E;
+    background-color: #ff9441;
 }

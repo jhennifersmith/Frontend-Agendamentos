@@ -31,8 +31,8 @@ export class AgendamentoSearchComponent implements OnInit{
   }
 
 
-  pageSizeOptions = [5, 10, 25];
-  length = 50;
+  pageSizeOptions = [5, 10, 25, 100];
+  length = 0;
 
   pageEvent: PageEvent;
 
@@ -54,7 +54,6 @@ export class AgendamentoSearchComponent implements OnInit{
   constructor(private agendamentoService: AgendamentoService, private router: Router) { }
 
   ngOnInit(): void {
-    
   }
 
   navigateToAgendamentoCreate(){
@@ -63,9 +62,10 @@ export class AgendamentoSearchComponent implements OnInit{
 
 
   searchAgendamento() {
-    this.agendamentoService.search(this.agendamentoFilter).subscribe(agendamentosGridDTO => {
-      this.agendamentosGridDTO = agendamentosGridDTO
-      console.log(agendamentosGridDTO)
+    this.agendamentoService.search(this.agendamentoFilter).subscribe(responseList => {
+      this.agendamentosGridDTO = responseList.list
+      this.length = responseList.total
+      console.log(responseList.list)
   })}
 
   cancel() {

@@ -72,6 +72,7 @@ export class ClienteFormComponent implements OnInit {
         peso: ['', Validators.required],
       }),
       id: [''],
+      teste: ['', [Validators.email, Validators.minLength(4)]],
       telefones: this.fb.array([], [Validators.required]),
       emails: this.fb.array([]),
       dataCriacao: ['', Validators.required],
@@ -79,9 +80,7 @@ export class ClienteFormComponent implements OnInit {
     });
   }
 
-
  
-
   adicionarAoArray(numero: string) {
     this.telefone.push(
       this.fb.group({

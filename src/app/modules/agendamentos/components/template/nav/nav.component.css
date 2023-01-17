@@ -1,5 +1,5 @@
 mat-sidenav-container {
-    background-color: #8C914E;
+    background-color: #ff9441;
 }
 
 html{
@@ -12,7 +12,7 @@ body{
 }
 
 .sidenav {
-    background-color: #8C914E;
+    background-color: #ff9441;
 }
 
 .sidenav i{
@@ -21,10 +21,10 @@ body{
 
 .sidenav a:hover,
 .sidenav a.active{
-background-color: #FAFFBD;
+background-color: #ffd57b;
 }
 
 .content {
-    background-color: #FAFFBD;
+    background-color: #ffd57b;
     padding: 1rem;
 }

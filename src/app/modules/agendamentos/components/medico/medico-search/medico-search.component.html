@@ -77,12 +77,12 @@
     <!--Description Column-->
     <ng-container matColumnDef="dataCriacao">
       <th mat-header-cell *matHeaderCellDef>Data de Criação</th>
-      <td mat-cell *matCellDef="let row">{{row.dataCriacao}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.dataCriacao | date: 'dd/MM/yyyy HH:mm' }}</td>
     </ng-container>
 
     <ng-container matColumnDef="dataExclusao">
       <th mat-header-cell *matHeaderCellDef>Data de Exclusão</th>
-      <td mat-cell *matCellDef="let row">{{row.dataExclusao}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.dataExclusao | date: 'dd/MM/yyyy HH:mm' }}</td>
     </ng-container>
 
     <!--Action Column-->

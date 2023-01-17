@@ -1,0 +1,34 @@
+mat-card {
+    padding: 1rem;
+    background-color: #ffd57b;
+    margin-bottom: 1rem;
+}
+
+mat-card-title {
+    padding-left: 1rem;
+    text-align: left;
+    margin-left: 1rem;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.cliente-search {
+    display: flex;
+    flex-direction: column;
+}
+mat-form-field {
+    padding: 0.5rem;
+    width: 25rem;
+    height: 5rem;
+}
+
+.buttons {
+    padding-left: 1rem;
+}
+
+.buttons button {
+    margin-left: 1rem;
+    background-color: #ff9441;
+}
