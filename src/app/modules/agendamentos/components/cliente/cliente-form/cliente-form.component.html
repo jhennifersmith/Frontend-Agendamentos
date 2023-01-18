@@ -28,19 +28,19 @@
 
           <mat-form-field>
             <mat-label>CPF</mat-label>
-            <input matInput placeholder="CPF" id="cpf" formControlName="cpf" required />
+            <input matInput placeholder="CPF" id="cpf" formControlName="cpf" required mask="CPF_CNPJ" />
           </mat-form-field>
         </div>
 
         <div class="row3">
           <mat-form-field>
             <mat-label>Altura</mat-label>
-            <input matInput placeholder="Altura" id="altura" formControlName="altura" required />
+            <input matInput placeholder="Altura" id="altura" formControlName="altura" required mask="0.00" suffix=" metros">
           </mat-form-field>
 
           <mat-form-field>
             <mat-label>Peso</mat-label>
-            <input matInput placeholder="Peso" id="peso" formControlName="peso" required />
+            <input matInput placeholder="Peso" id="peso" formControlName="peso" required mask="00.0 || 000.00" suffix=" kg"/>
           </mat-form-field>
         </div>
       </div>
@@ -81,7 +81,7 @@
       </div>
       <mat-form-field>
         <mat-label>Telefone</mat-label>
-        <input #input matInput type="text" placeholder="(00)00000-0000" required />
+        <input #input matInput type="text" placeholder="(00)00000-0000" required prefix="+55" mask="(00)00000-0000"/>
         <mat-icon matSuffix>phone</mat-icon>
         <mat-hint>Inclua o DDD </mat-hint>
       </mat-form-field>
@@ -108,9 +108,9 @@
       </div>
       <mat-form-field>
         <mat-label>Email</mat-label>
-        <input #inputEmail matInput type="email" formControlName="teste" placeholder="janedoe@email.com" email />
+        <input #inputEmail matInput type="email" name="teste" formControlName="teste" placeholder="janedoe@email.com" email />
       </mat-form-field>
-      <button [disabled]="!clienteFormGroup.valid" mat-raised-button
+      <button [disabled]="clienteFormGroup.value.teste.valid" mat-raised-button
         (click)="adicionarAoArrayEmail(inputEmail.value)">Adicionar</button>
 
     </div>

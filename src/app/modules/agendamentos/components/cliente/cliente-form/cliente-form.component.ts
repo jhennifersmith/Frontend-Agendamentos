@@ -15,7 +15,7 @@ export class ClienteFormComponent implements OnInit {
 
 
   clienteFormGroup!: FormGroup;
-  cliente: Cliente; 
+  cliente: Cliente;
 
   constructor(
     private clienteService: ClienteService,
@@ -29,101 +29,101 @@ export class ClienteFormComponent implements OnInit {
     this.loadCliente();
   }
 
-  save(){
-    if (this.clienteFormGroup.value.id) {
-      this.updateCliente();
-    }
-    else {
-      this.createCliente();
-    }
+save(){
+  if (this.clienteFormGroup.value.id) {
+    this.updateCliente();
   }
+  else {
+    this.createCliente();
+  }
+}
 
-  loadCliente(): void {
-    const id = +this.route.snapshot.paramMap.get('id')
-    if (id) {
-      this.clienteService.readById(id).subscribe((cliente) => {
-        this.cliente = cliente;
-        this.clienteFormGroup.patchValue(cliente);
-        this.cliente.telefones.map((telefone) => this.adicionarAoArray(telefone.numero));
-        this.cliente.emails.map((email) => this.adicionarAoArrayEmail(email.endereco));
-      })
-      return this.clienteFormGroup.value;
-    }
-    else {
-      return this.clienteFormGroup.value;
-    }
+loadCliente(): void {
+  const id = +this.route.snapshot.paramMap.get('id')
+    if(id) {
+    this.clienteService.readById(id).subscribe((cliente) => {
+      this.cliente = cliente;
+      this.clienteFormGroup.patchValue(cliente);
+      this.cliente.telefones.map((telefone) => this.adicionarAoArray(telefone.numero));
+      this.cliente.emails.map((email) => this.adicionarAoArrayEmail(email.endereco));
+    })
+    return this.clienteFormGroup.value;
   }
+    else {
+    return this.clienteFormGroup.value;
+  }
+}
 
   get telefone() {
-    return this.clienteFormGroup.get('telefones') as FormArray;
-  }
+  return this.clienteFormGroup.get('telefones') as FormArray;
+}
   get email() {
-    return this.clienteFormGroup.get('emails') as FormArray;
-  }
+  return this.clienteFormGroup.get('emails') as FormArray;
+}
 
-  createForm(cliente: Cliente) {
-    this.clienteFormGroup = this.fb.group({
-      pessoa: this.fb.group({
-        nome: ['', [Validators.required, Validators.minLength(3)]],
-        dataNascimento: ['', Validators.required],
-        sexo: [null, Validators.required], 
-        cpf: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
-        altura: ['', Validators.required],
-        peso: ['', Validators.required],
-      }),
-      id: [''],
-      teste: ['', [Validators.email, Validators.minLength(4)]],
-      telefones: this.fb.array([], [Validators.required]),
-      emails: this.fb.array([]),
-      dataCriacao: ['', Validators.required],
-      dataExclusao: ['']
-    });
-  }
-
- 
-  adicionarAoArray(numero: string) {
-    this.telefone.push(
-      this.fb.group({
-        numero: numero
-      })
-    );
-  }
-
-  removeTelefone(indiceTelefone: number) {
-    this.telefone.removeAt(indiceTelefone);
-    }
-
-  adicionarAoArrayEmail(endereco: string) {
-    this.email.push(
-      this.fb.group({
-        endereco: endereco
-      })
-    );
-  }
-
-  removeEmail(indiceEmail: number) {
-    this.email.removeAt(indiceEmail);
-  }
+createForm(cliente: Cliente) {
+  this.clienteFormGroup = this.fb.group({
+    pessoa: this.fb.group({
+      nome: ['', [Validators.required, Validators.minLength(3)]],
+      dataNascimento: ['', Validators.required],
+      sexo: [null, Validators.required],
+      cpf: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+      altura: ['', Validators.required],
+      peso: ['', Validators.required],
+    }),
+    id: [''],
+    teste: ['', [Validators.email, Validators.minLength(4)]],
+    telefones: this.fb.array([], [Validators.required]),
+    emails: this.fb.array([]),
+    dataCriacao: ['', Validators.required],
+    dataExclusao: ['']
+  });
+}
 
 
-  updateCliente(): void {
-    this.clienteService.update(this.clienteFormGroup.value).subscribe(() => {
-      this.clienteService.showMessage("Cliente atualizado com sucesso!")
-      this.router.navigate(['/cliente'])
+adicionarAoArray(numero: string) {
+  this.telefone.push(
+    this.fb.group({
+      numero: numero
     })
-  }
+  );
+}
 
-  createCliente() {
-    console.log(this.clienteFormGroup.value);
-    this.clienteService.create(this.clienteFormGroup.value).subscribe(() => {
-      this.clienteService.showMessage('Cliente criado!')
-      this.router.navigate(['/cliente'])
-    });
-  }
+removeTelefone(indiceTelefone: number) {
+  this.telefone.removeAt(indiceTelefone);
+}
 
-  cancel(): void {
+adicionarAoArrayEmail(endereco: string) {
+  this.email.push(
+    this.fb.group({
+      endereco: endereco
+    })
+  );
+}
+
+removeEmail(indiceEmail: number) {
+  this.email.removeAt(indiceEmail);
+}
+
+
+updateCliente(): void {
+  this.clienteService.update(this.clienteFormGroup.value).subscribe(() => {
+    this.clienteService.showMessage("Cliente atualizado com sucesso!")
     this.router.navigate(['/cliente'])
-  }
+  })
+}
+
+createCliente() {
+  console.log(this.clienteFormGroup.value);
+  this.clienteService.create(this.clienteFormGroup.value).subscribe(() => {
+    this.clienteService.showMessage('Cliente criado!')
+    this.router.navigate(['/cliente'])
+  });
+}
+
+cancel(): void {
+  this.router.navigate(['/cliente'])
+}
 
 }
 

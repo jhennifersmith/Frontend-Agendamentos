@@ -20,7 +20,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ClienteService } from 'src/app/modules/agendamentos/services/cliente.service';
 import { ClienteFormComponent } from './cliente-form/cliente-form.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
+import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from 'ngx-mask'
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import {MatSelectModule} from '@angular/material/select';
         ReactiveFormsModule,
         MatRadioModule,
         ClienteRoutingModule,
-        MatSelectModule
+        MatSelectModule,
+        NgxMaskDirective, NgxMaskPipe
     ],
     exports: [],
     declarations: [
@@ -51,7 +53,7 @@ import {MatSelectModule} from '@angular/material/select';
         ClienteDeleteComponent,
         ClienteFormComponent,
     ],
-    providers: [ClienteService],
+    providers: [ClienteService, provideNgxMask()],
 })
 
 export class ClienteModule { }

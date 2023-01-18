@@ -10,13 +10,13 @@
           </mat-form-field>
           <mat-form-field>
             <mat-label>CPF</mat-label>
-            <input matInput placeholder="CPF" id="cpf" formControlName="cpf" required />
+            <input matInput placeholder="CPF" id="cpf" formControlName="cpf" required mask="CPF_CNPJ"/>
           </mat-form-field>
         </div>
         <div class="row2">
           <mat-form-field>
             <mat-label>Data de nascimento</mat-label>
-            <input matInput placeholder="Data de Nascimento" id="dataNascimento" formControlName="dataNascimento"
+            <input matInput placeholder="Data de Nascimento" id="dataNascimento" type="datetime-local" formControlName="dataNascimento"
               required />
           </mat-form-field>
           <mat-form-field appearance="fill">
@@ -32,11 +32,11 @@
         <div class="row3">
           <mat-form-field>
             <mat-label>Altura</mat-label>
-            <input matInput placeholder="Altura" id="altura" formControlName="altura" required />
+            <input matInput placeholder="Altura" id="altura" formControlName="altura" required mask="0.00" suffix=" metros"/>
           </mat-form-field>
           <mat-form-field>
             <mat-label>Peso</mat-label>
-            <input matInput placeholder="Peso" id="peso" formControlName="peso" required />
+            <input matInput placeholder="Peso" id="peso" formControlName="peso" required mask="00.0 || 000.00" suffix=" kg"/>
           </mat-form-field>
         </div>
       </div>

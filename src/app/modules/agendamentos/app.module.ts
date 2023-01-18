@@ -33,6 +33,7 @@ import { MedicoModule } from './components/medico/medico.module';
 import { ClienteModule } from './components/cliente/cliente.module';
 import { AgendamentoModule } from './components/agendamento/agendamento.module';
 
+import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from 'ngx-mask'
 
 
 @NgModule({
@@ -67,9 +68,10 @@ import { AgendamentoModule } from './components/agendamento/agendamento.module';
     ClienteModule,
     EspecialidadeModule,
     EspecialidadeMedicoModule,
-    MedicoModule
+    MedicoModule,
+    NgxMaskDirective, NgxMaskPipe
   ],
-  providers: [],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

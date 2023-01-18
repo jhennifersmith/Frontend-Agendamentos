@@ -21,7 +21,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MedicoService } from 'src/app/modules/agendamentos/services/medico.service';
 import { MedicoFormComponent } from './medico-form/medico-form.component';
 import { MatSelectModule } from '@angular/material/select';
-
+import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from 'ngx-mask'
 @NgModule({
     imports: [
         CommonModule,
@@ -41,7 +41,8 @@ import { MatSelectModule } from '@angular/material/select';
         ReactiveFormsModule,
         MatRadioModule,
         MedicoRoutingModule,
-        MatSelectModule
+        MatSelectModule,
+        NgxMaskDirective, NgxMaskPipe
     ],
     exports: [],
     declarations: [
@@ -50,7 +51,7 @@ import { MatSelectModule } from '@angular/material/select';
         MedicoDeleteComponent,
         MedicoFormComponent,
     ],
-    providers: [MedicoService],
+    providers: [MedicoService, provideNgxMask()],
 })
 
 export class MedicoModule { }

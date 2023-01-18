@@ -22,6 +22,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AgendamentoFormComponent } from './agendamento-form/agendamento-form.component';
 import { MatSelectModule } from '@angular/material/select';
 import {LOCALE_ID} from '@angular/core';
+import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from 'ngx-mask'
 
 @NgModule({
     imports: [
@@ -43,7 +44,8 @@ import {LOCALE_ID} from '@angular/core';
         ReactiveFormsModule,
         MatRadioModule,
         MatSelectModule,
-        RouterModule
+        RouterModule,
+        NgxMaskDirective, NgxMaskPipe
     ],
     exports: [],
     declarations: [
@@ -51,7 +53,7 @@ import {LOCALE_ID} from '@angular/core';
         AgendamentoSearchComponent,
         AgendamentoFormComponent
     ],
-    providers: [AgendamentoService],
+    providers: [AgendamentoService, provideNgxMask()],
     
 })
 

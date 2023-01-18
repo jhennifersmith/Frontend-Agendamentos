@@ -23,7 +23,7 @@
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Valor da consulta</mat-label>
-                <input matInput placeholder="Valor da consulta" [(ngModel)]="agendamentoDTO.valor" name="valor" required>
+                <input matInput placeholder="Valor da consulta" [(ngModel)]="agendamentoDTO.valor" name="valor"  prefix="R$" mask="separator.2" required>
             </mat-form-field>
         </div>
 
