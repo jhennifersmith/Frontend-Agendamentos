@@ -34,7 +34,22 @@ import { ClienteModule } from './components/cliente/cliente.module';
 import { AgendamentoModule } from './components/agendamento/agendamento.module';
 
 import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from 'ngx-mask'
+import  Swal from 'sweetalert2'
 
+// Swal.fire({
+//   title: 'Você é um pokémon?',
+//   text: '',
+//   icon: 'question',
+//   showCancelButton: true,
+//   confirmButtonText: 'Sou um pokémon!',
+//   cancelButtonText: 'Não, sou humano!'
+// }).then(result => {
+//   if(result.value){
+//     Swal.fire('Parabéns!', 'Por ser um eterno aprendiz', 'success')
+//   } else {
+//     Swal.fire('Resposta errada!', '', 'error')
+//   }
+// })
 
 @NgModule({
   declarations: [
@@ -69,7 +84,7 @@ import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from 'ngx-mask'
     EspecialidadeModule,
     EspecialidadeMedicoModule,
     MedicoModule,
-    NgxMaskDirective, NgxMaskPipe
+    NgxMaskDirective, NgxMaskPipe,
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent]

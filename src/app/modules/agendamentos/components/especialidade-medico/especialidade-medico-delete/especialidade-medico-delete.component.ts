@@ -27,7 +27,7 @@ export class EspecialidadeMedicoDeleteComponent implements OnInit {
 
   deleteEspecialidadeMedico(): void {
     this.especialidadeMedicoService.delete(this.especialidadeMedicoDTO.id).subscribe(() => {
-      this.especialidadeMedicoService.showMessage('Especialidade médico excluída com sucesso!')
+      this.especialidadeMedicoService.sucessMessage("Especialidade médico excluída com sucesso!")
       this.router.navigate(['/especialidade-medico'])
     })
   }

@@ -108,7 +108,7 @@ removeEmail(indiceEmail: number) {
 
 updateCliente(): void {
   this.clienteService.update(this.clienteFormGroup.value).subscribe(() => {
-    this.clienteService.showMessage("Cliente atualizado com sucesso!")
+    this.clienteService.sucessMessage("Cliente atualizado com sucesso!")
     this.router.navigate(['/cliente'])
   })
 }
@@ -116,7 +116,7 @@ updateCliente(): void {
 createCliente() {
   console.log(this.clienteFormGroup.value);
   this.clienteService.create(this.clienteFormGroup.value).subscribe(() => {
-    this.clienteService.showMessage('Cliente criado!')
+    this.clienteService.sucessMessage("Cliente criado!")
     this.router.navigate(['/cliente'])
   });
 }

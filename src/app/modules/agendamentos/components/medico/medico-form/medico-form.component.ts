@@ -70,7 +70,7 @@ export class MedicoFormComponent implements OnInit {
   createMedico() {
     console.log(this.medicoFormGroup.value);
     this.medicoService.create(this.medicoFormGroup.value).subscribe(() => {
-      this.medicoService.showMessage('medico criado!')
+      this.medicoService.sucessMessage('Médico criado!')
       this.router.navigate(['/medico']);
     })
   }
@@ -78,7 +78,7 @@ export class MedicoFormComponent implements OnInit {
   updateMedico() {
     console.log(this.medicoFormGroup.value);
     this.medicoService.update(this.medicoFormGroup.value).subscribe(() => {
-      this.medicoService.showMessage('medico atualizado!')
+      this.medicoService.sucessMessage('Médico atualizado!')
       this.router.navigate(['/medico']);
     })
   }

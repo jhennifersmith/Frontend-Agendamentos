@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
 import { Especialidade } from '../models/especialidade.model';
 import { catchError, EMPTY, map, Observable } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +13,6 @@ export class EspecialidadeService {
   baseUrl = 'http://localhost:8080/agendamentos/api/especialidade'
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
-
-  showMessage(msg: string, isError: boolean = false): void {
-    this.snackBar.open(msg, '', {
-      duration: 3000,
-      horizontalPosition: "right",
-      verticalPosition: "top",
-      panelClass: isError? ['msg-error'] : ['msg-success']
-    })
-  }
 
   create(especialidade: Especialidade): Observable<Especialidade> {
     return this.http.post<Especialidade>(this.baseUrl, especialidade).pipe(
@@ -60,9 +52,44 @@ export class EspecialidadeService {
     );
   }
 
+  sucessMessage(msg: string){
+    Swal.fire({
+      icon: 'success',
+      title: 'Sucesso!',
+      text: msg,
+      width: 600,
+      padding: '3em',
+      color: '#000',
+      background: '#fff',
+      confirmButtonColor: '#000',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("https://media.tenor.com/cybdHYBCerIAAAAj/pokemon-charmander.gif")
+        left top
+        no-repeat
+      `
+    })
+    return EMPTY
+  }
+
   errorHandler(e: any): Observable<any> {
-    this.showMessage('Ocorreu um erro!', true)
-    return EMPTY;
+    Swal.fire({
+      icon: 'error',
+      title: 'Erro!',
+      text: e.error,
+      width: 600,
+      padding: '3em',
+      color: '#000',
+      background: '#fff',
+      confirmButtonColor: '#000',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("https://media.tenor.com/cybdHYBCerIAAAAj/pokemon-charmander.gif")
+        left top
+        no-repeat
+      `
+    })
+    return EMPTY
   }
 
 }

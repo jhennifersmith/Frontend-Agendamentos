@@ -25,7 +25,7 @@ export class EspecialidadeDeleteComponent implements OnInit {
 
   deleteEspecialidade(): void {
     this.especialidadeService.delete(this.especialidade.id).subscribe(() => {
-      this.especialidadeService.showMessage('Especialidade excluída com sucesso!')
+      this.especialidadeService.sucessMessage('Especialidade excluída com sucesso!')
       this.router.navigate(['/especialidade'])
     })
   }

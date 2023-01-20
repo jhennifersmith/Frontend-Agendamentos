@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, EMPTY, map, Observable } from 'rxjs';
+import Swal from 'sweetalert2';
 import { ClienteFilter } from '../models/cliente-filter.model';
 import { Cliente } from '../models/cliente.model';
 import { ListResponse } from '../models/list-response.model';
@@ -16,14 +17,14 @@ export class ClienteService {
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
-  showMessage(msg: string, isError: boolean = false): void {
-    this.snackBar.open(msg, '', {
-      duration: 3000,
-      horizontalPosition: "right",
-      verticalPosition: "top",
-      panelClass: isError? ['msg-error'] : ['msg-success']
-    })
-  }
+  // showMessage(msg: string, isError: boolean = false): void {
+  //   this.snackBar.open(msg, '', {
+  //     duration: 3000,
+  //     horizontalPosition: "right",
+  //     verticalPosition: "top",
+  //     panelClass: isError? ['msg-error'] : ['msg-success']
+  //   })
+  // }
 
   create(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(this.baseUrl, cliente).pipe(
@@ -73,11 +74,44 @@ export class ClienteService {
     );
   }
 
-
+  sucessMessage(msg: string){
+    Swal.fire({
+      icon: 'success',
+      title: 'Sucesso!',
+      text: msg,
+      width: 600,
+      padding: '3em',
+      color: '#000',
+      background: '#fff',
+      confirmButtonColor: '#000',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("https://media.tenor.com/cybdHYBCerIAAAAj/pokemon-charmander.gif")
+        left top
+        no-repeat
+      `
+    })
+    return EMPTY
+  }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage('Ocorreu um erro!', true)
-    return EMPTY;
+    Swal.fire({
+      icon: 'error',
+      title: 'Erro!',
+      text: e.error,
+      width: 600,
+      padding: '3em',
+      color: '#000',
+      background: '#fff',
+      confirmButtonColor: '#000',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("https://media.tenor.com/cybdHYBCerIAAAAj/pokemon-charmander.gif")
+        left top
+        no-repeat
+      `
+    })
+    return EMPTY
   }
 
 }

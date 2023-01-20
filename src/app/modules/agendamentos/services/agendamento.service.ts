@@ -3,10 +3,11 @@ import { AgendamentoGridDTO } from '../models/agendamento-grid-dto.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { catchError, EMPTY, map, Observable } from 'rxjs';
+import { catchError, EMPTY, Observable } from 'rxjs';
 import { AgendamentoFilter } from '../models/agendamento-filter.model';
 import { Agendamento } from '../models/agendamento.model';
 import { AgendamentoDTO } from '../models/agendamentoDTO.model';
+import  Swal from 'sweetalert2'
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +17,6 @@ export class AgendamentoService {
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
-  showMessage(msg: string, isError: boolean = false): void {
-    this.snackBar.open(msg, '', {
-      duration: 3000,
-      horizontalPosition: "right",
-      verticalPosition: "top",
-      panelClass: isError? ['msg-error'] : ['msg-success']
-    })
-  }
 
   create(agendamentoDTO: AgendamentoDTO): Observable<Agendamento> {
     return this.http.post<Agendamento>(this.baseUrl, agendamentoDTO).pipe(
@@ -58,9 +51,44 @@ export class AgendamentoService {
     );
   }
 
+  sucessMessage(msg: string){
+    Swal.fire({
+      icon: 'success',
+      title: 'Sucesso!',
+      text: msg,
+      width: 600,
+      padding: '3em',
+      color: '#000',
+      background: '#fff',
+      confirmButtonColor: '#000',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("https://media.tenor.com/cybdHYBCerIAAAAj/pokemon-charmander.gif")
+        left top
+        no-repeat
+      `
+    })
+    return EMPTY
+  }
+
   errorHandler(e: any): Observable<any> {
-    this.showMessage('Ocorreu um erro!', true)
-    return EMPTY;
+    Swal.fire({
+      icon: 'error',
+      title: 'Erro!',
+      text: e.error,
+      width: 600,
+      padding: '3em',
+      color: '#000',
+      background: '#fff',
+      confirmButtonColor: '#000',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("https://media.tenor.com/cybdHYBCerIAAAAj/pokemon-charmander.gif")
+        left top
+        no-repeat
+      `
+    })
+    return EMPTY
   }
 
 }

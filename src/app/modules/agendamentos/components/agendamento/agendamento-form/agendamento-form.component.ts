@@ -58,14 +58,14 @@ export class AgendamentoFormComponent implements OnInit {
   createAgendamento(): void {
 
     this.agendamentoService.create(this.agendamentoDTO).subscribe(() => {
-      this.agendamentoService.showMessage('Agendamento criado!')
+      this.agendamentoService.sucessMessage("Agendamento criado!")
       this.router.navigate(['/agendamento']);
     })
   }
 
   updateAgendamento(): void {
     this.agendamentoService.update(this.agendamentoDTO).subscribe(() => {
-      this.agendamentoService.showMessage("Agendamento atualizado com sucesso!")
+      this.agendamentoService.sucessMessage("Agendamento atualizado com sucesso!");
       this.router.navigate(['/agendamento'])
     })
   }

@@ -50,14 +50,14 @@ export class EspecialidadeFormComponent implements OnInit {
 
   createEspecialidade(): void {
     this.especialidadeService.create(this.especialidade).subscribe(() => {
-      this.especialidadeService.showMessage('Especialidade criada!')
+      this.especialidadeService.sucessMessage("Especialidade criada!")
       this.router.navigate(['/especialidade']);
     })
   }
 
   updateEspecialidade(): void {
     this.especialidadeService.update(this.especialidade).subscribe(() => {
-      this.especialidadeService.showMessage("Especialidade atualizado com sucesso!")
+      this.especialidadeService.sucessMessage("Especialidade atualizado com sucesso!")
       this.router.navigate(['/especialidade'])
     })
   }

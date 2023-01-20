@@ -50,7 +50,7 @@ export class MedicoDeleteComponent implements OnInit {
   deleteMedico() {
     console.log(this.medicoFormGroup.value);
     this.medicoService.delete(this.medico.id).subscribe(() => {
-      this.medicoService.showMessage('medico deletado!')
+      this.medicoService.sucessMessage("Médico deletado!")
       this.router.navigate(['/medico']);
 
     })

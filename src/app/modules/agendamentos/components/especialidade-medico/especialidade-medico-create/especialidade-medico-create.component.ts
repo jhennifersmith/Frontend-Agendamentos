@@ -23,7 +23,7 @@ export class EspecialidadeMedicoCreateComponent implements OnInit{
   
   createEspecialidadeMedico(): void {
     this.especialidadeMedicoService.create(this.especialidadeMedicoDTO).subscribe( () => {
-      this.especialidadeMedicoService.showMessage('Especialidade criada!')
+      this.especialidadeMedicoService.sucessMessage("Especialidade criada!")
       this.router.navigate(['/especialidade-medico']);
     })
   }

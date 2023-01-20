@@ -40,7 +40,7 @@ export class ClienteDeleteComponent implements OnInit {
   }
   deleteCliente(): void {
     this.clienteService.delete(this.cliente.id).subscribe(() => {
-      this.clienteService.showMessage('Cliente excluído com sucesso!')
+      this.clienteService.sucessMessage('Cliente excluído com sucesso!')
       this.router.navigate(['/cliente'])
     })
   }
