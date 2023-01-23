@@ -1,22 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
-@import url("https://fonts.googleapis.com/css?family=Poppins");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-
-*{
-    font-family: 'Poppins';
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-html, body { height: 100%; }
-body { margin: 0;   background-color: #ffd57b;}
-
-.msg-success{
-    background-color: green;
-    color: black;
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+* {
+  font-family: "Poppins";
+  color: #000;
 }
 
-.msg-error{
-    background-color: red;
-    color: black;
+body {
+  background-color: #ffd57b;
+  margin: 0;
 }
+
+/*# sourceMappingURL=styles.css.map */

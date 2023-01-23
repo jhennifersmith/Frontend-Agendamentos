@@ -35,12 +35,14 @@
         <div class="row3">
           <mat-form-field>
             <mat-label>Altura</mat-label>
-            <input matInput placeholder="Altura" id="altura" formControlName="altura" required mask="0.00" suffix=" metros">
+            <input matInput placeholder="Altura" id="altura" formControlName="altura" required mask="0.00"
+              suffix=" metros">
           </mat-form-field>
 
           <mat-form-field>
             <mat-label>Peso</mat-label>
-            <input matInput placeholder="Peso" id="peso" formControlName="peso" required mask="00.0 || 000.00" suffix=" kg"/>
+            <input matInput placeholder="Peso" id="peso" formControlName="peso" required mask="00.0 || 000.00"
+              suffix=" kg" />
           </mat-form-field>
         </div>
       </div>
@@ -69,10 +71,11 @@
                 <mat-label>Telefone</mat-label>
                 <input #input matInput type="tel" formControlName="numero" readonly />
               </mat-form-field>
-              <button mat-raised-button (click)="removeTelefone(indiceTelefone.valueOf())">
+              <button class="btn btn-red" mat-raised-button (click)="removeTelefone(indiceTelefone.valueOf())">
                 <i class="material-icons">
                   delete
-                </i></button>
+                </i>
+              </button>
             </div>
           </ng-container>
           <ng-container *ngIf="telefone.controls.length === 0">
@@ -81,11 +84,15 @@
       </div>
       <mat-form-field>
         <mat-label>Telefone</mat-label>
-        <input #input matInput type="text" placeholder="(00)00000-0000" required prefix="+55" mask="(00)00000-0000"/>
+        <input #input matInput type="text" placeholder="(00)00000-0000" required prefix="+55" mask="(00)00000-0000" />
         <mat-icon matSuffix>phone</mat-icon>
         <mat-hint>Inclua o DDD </mat-hint>
       </mat-form-field>
-      <button mat-raised-button (click)="adicionarAoArray(input.value)">Adicionar</button>
+      <button class="btn btn-green" mat-raised-button (click)="adicionarAoArray(input.value)">
+        <i class="material-icons">
+          add
+        </i>
+      </button>
 
       <div class="array-email">
         <div formArrayName="emails">
@@ -95,7 +102,7 @@
                 <mat-label>Email</mat-label>
                 <input matInput type="email" formControlName="endereco" email readonly />
               </mat-form-field>
-              <button mat-raised-button (click)="removeEmail(indiceEmail.valueOf())">
+              <button class="btn btn-red" mat-raised-button (click)="removeEmail(indiceEmail.valueOf())">
                 <i class="material-icons">
                   delete
                 </i>
@@ -108,18 +115,23 @@
       </div>
       <mat-form-field>
         <mat-label>Email</mat-label>
-        <input #inputEmail matInput type="email" name="teste" formControlName="teste" placeholder="janedoe@email.com" email />
+        <input #inputEmail matInput type="email" name="teste" formControlName="teste" placeholder="janedoe@email.com"
+          email />
       </mat-form-field>
-      <button [disabled]="clienteFormGroup.value.teste.valid" mat-raised-button
-        (click)="adicionarAoArrayEmail(inputEmail.value)">Adicionar</button>
+      <button class="btn btn-green" [disabled]="clienteFormGroup.value.teste.valid" mat-raised-button
+        (click)="adicionarAoArrayEmail(inputEmail.value)">
+        <i class="material-icons">
+          add
+        </i>
+      </button>
 
     </div>
   </form>
   <div class="buttons">
-    <button [disabled]="!clienteFormGroup.valid" mat-raised-button (click)="save()">
+    <button class="btn btn-green" [disabled]="!clienteFormGroup.valid" mat-raised-button (click)="save()">
       Salvar
     </button>
-    <button mat-raised-button (click)="cancel()">
+    <button class="btn btn-red" mat-raised-button (click)="cancel()">
       Cancelar
     </button>
   </div>

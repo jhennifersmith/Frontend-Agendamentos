@@ -1,35 +1,54 @@
-mat-card {
-    padding: 1rem;
-    background-color: #ffd57b;
-    margin-bottom: 1rem;
-}
-
-mat-card-title {
-    padding-left: 1rem;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-}
-
-mat-form-field {
-    padding: 0.5rem;
-    width: 25rem;
-    height: 5rem;
-}
-
-mat-card-title {
-    text-align: left;
-    margin-left: 1rem;
-}
-
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 .buttons {
-    padding-left: 1rem;
+  padding-left: 1.3rem;
+}
+.buttons button {
+  padding: 1rem;
+  margin-left: 1rem;
+}
+.buttons .btn-green {
+  background-color: #e6ac5a;
+}
+.buttons .btn-green:hover {
+  background-color: #e19a37;
+  transition: all 0.3s ease;
+}
+.buttons .btn-green:active {
+  background-color: #a76c19;
+}
+.buttons .btn-red {
+  background-color: #e63900;
+}
+.buttons .btn-red:hover {
+  background-color: #bd2f00;
+  transition: all 0.3s ease;
+}
+.buttons .btn-red:active {
+  background-color: #671900;
 }
 
-.buttons button {
-    margin-left: 1rem;
-    background-color: #ff9441;
+mat-card {
+  padding: 1rem;
+  background-color: #ffd57b;
+  margin-bottom: 1rem;
+  border: none;
+  font-family: "Poppins";
 }
+mat-card mat-card-title {
+  padding-left: 1rem;
+  text-align: left;
+  margin-left: 1rem;
+  font-family: "Poppins";
+}
+mat-card form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+mat-card form mat-form-field {
+  padding: 0.5rem;
+  width: 25rem;
+  height: 5rem;
+}
+
+/*# sourceMappingURL=agendamento-form.component.css.map */

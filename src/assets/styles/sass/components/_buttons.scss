@@ -1,0 +1,37 @@
+@import './../abstracts/variables';
+
+.buttons {
+    padding-left: 1.3rem;
+
+    button {
+        padding: 1rem;
+        margin-left: 1rem;
+    }
+
+    .btn-green {
+        background-color: $secundary-color;
+
+        &:hover {
+            background-color: darken($secundary-color, 8%);
+            transition: all 0.3s ease;
+        }
+
+        &:active {
+            background-color: darken($secundary-color, 25%);
+        }
+    }
+
+    .btn-red {
+        background-color: $primary-color;
+
+        &:hover {
+            background-color: darken($primary-color, 8%);
+            transition: all 0.3s ease;
+        }
+
+        &:active {
+            background-color: darken($primary-color, 25%);
+        }
+    }
+
+}

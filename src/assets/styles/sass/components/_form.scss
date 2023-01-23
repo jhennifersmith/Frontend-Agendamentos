@@ -1,0 +1,29 @@
+@import './../abstracts/variables';
+@import './buttons';
+@import './../core/typography';
+
+mat-card {
+    padding: 1rem;
+    background-color: $tertiary-color;
+    margin-bottom: 1rem;
+    border: none;
+    font-family: $poppins;
+
+    mat-card-title {
+        padding-left: 1rem;
+        text-align: left;
+        margin-left: 1rem;
+        font-family: $poppins;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+
+        mat-form-field {
+            padding: 0.5rem;
+            width: 25rem;
+            height: 5rem;
+        }
+    }
+}
