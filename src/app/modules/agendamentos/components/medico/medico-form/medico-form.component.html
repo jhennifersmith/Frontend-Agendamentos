@@ -63,12 +63,12 @@
 
     </div>
   </form>
-  <div class="buttons">
-    <button [disabled]="!medicoFormGroup.valid" mat-raised-button (click)="save()">
+  <div class="submit-buttons">
+    <button class="btn-save" [disabled]="!medicoFormGroup.valid" mat-raised-button (click)="save()">
       Salvar
     </button>
     <!--ngsubmit-->
-    <button mat-raised-button (click)="cancel()">
+    <button class="btn-cancel" mat-raised-button (click)="cancel()">
       Cancelar
     </button>
   </div>

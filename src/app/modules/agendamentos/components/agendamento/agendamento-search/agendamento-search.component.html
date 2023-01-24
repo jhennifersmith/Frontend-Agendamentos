@@ -56,11 +56,11 @@
         </div>
     </form>
 
-    <div class="buttons">
-        <button mat-raised-button (click)="searchAgendamento()">
+    <div class="search-buttons">
+        <button class="btn-search" mat-raised-button (click)="searchAgendamento()">
             Filtrar
         </button>
-        <button mat-raised-button (click)="navigateToAgendamentoCreate()">
+        <button class="btn-create" mat-raised-button (click)="navigateToAgendamentoCreate()">
             Novo Agendamento
         </button>
     </div>
@@ -68,7 +68,6 @@
 </mat-card>
 
 <div class="mat-elevation-z4">
-
     <table mat-table [dataSource]="agendamentosGridDTO">
         <!-- Id Column -->
         <ng-container matColumnDef="idAgendamento">

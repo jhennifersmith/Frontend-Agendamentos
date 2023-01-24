@@ -1,41 +1,52 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
-.buttons {
+.submit-buttons {
   padding-left: 1.3rem;
 }
-.buttons button {
+.submit-buttons button {
   padding: 1rem;
   margin-left: 1rem;
 }
-.buttons .btn-green {
+.submit-buttons .btn-save {
   background-color: #e6ac5a;
 }
-.buttons .btn-green:hover {
+.submit-buttons .btn-save:hover {
   background-color: #e19a37;
   transition: all 0.3s ease;
 }
-.buttons .btn-green:active {
+.submit-buttons .btn-save:active {
   background-color: #a76c19;
 }
-.buttons .btn-red {
+.submit-buttons .btn-cancel {
   background-color: #e63900;
 }
-.buttons .btn-red:hover {
+.submit-buttons .btn-cancel:hover {
   background-color: #bd2f00;
   transition: all 0.3s ease;
 }
-.buttons .btn-red:active {
+.submit-buttons .btn-cancel:active {
   background-color: #671900;
 }
 
-.add-btn .btn-blue {
+.btn-add {
   background-color: #41a47b;
 }
-.add-btn .btn-blue:hover {
+.btn-add:hover {
   background-color: #358765;
   transition: all 0.3s ease;
 }
-.add-btn .btn-blue:active {
+.btn-add:active {
   background-color: #1d4937;
+}
+
+.btn-delete {
+  background-color: #e63900;
+}
+.btn-delete:hover {
+  background-color: #bd2f00;
+  transition: all 0.3s ease;
+}
+.btn-delete:active {
+  background-color: #671900;
 }
 
 mat-card {

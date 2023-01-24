@@ -21,7 +21,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AgendamentoFormComponent } from './agendamento-form/agendamento-form.component';
 import { MatSelectModule } from '@angular/material/select';
-import {LOCALE_ID} from '@angular/core';
 import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from 'ngx-mask'
 
 @NgModule({

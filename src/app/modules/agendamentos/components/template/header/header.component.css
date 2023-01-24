@@ -1,31 +1,23 @@
-* {
-    box-sizing: border-box;
-  }
-
-mat-toolbar {
-    display:flex;
-    justify-content: center
-}
 .header {
-    margin: 0;
-    padding: 0;
-    background-color: #ff9441;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(26, 25, 25);
+}
+.header a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+.header .logo {
+  max-height: 2rem;
+}
+.header .title-group {
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.5em;
 }
 
-.header a{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #000
-}
-
-.header .logo{
-    max-height: 2rem;
-}
-
-.title-group {
-    align-items: center;
-    justify-content: center;
-    padding-left: 0.5em;
-}
-
+/*# sourceMappingURL=header.component.css.map */

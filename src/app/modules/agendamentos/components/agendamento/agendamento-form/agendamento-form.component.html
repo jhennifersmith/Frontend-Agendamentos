@@ -41,12 +41,12 @@
         </div>
     </form>
 
-    <div class="buttons">
-        <button class="btn-green" [disabled]="!f.valid" mat-raised-button (click)="save()">
+    <div class="submit-buttons">
+        <button class="btn-save" [disabled]="!f.valid" mat-raised-button (click)="save()">
             Salvar
         </button>
 
-        <button class="btn-red" mat-raised-button (click)="cancel()">
+        <button class="btn-cancel" mat-raised-button (click)="cancel()">
             Cancelar
         </button>
     </div>

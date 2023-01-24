@@ -71,7 +71,7 @@
                 <mat-label>Telefone</mat-label>
                 <input #input matInput type="tel" formControlName="numero" readonly />
               </mat-form-field>
-              <button class="btn btn-red" mat-raised-button (click)="removeTelefone(indiceTelefone.valueOf())">
+              <button class="btn-delete" mat-raised-button (click)="removeTelefone(indiceTelefone.valueOf())">
                 <i class="material-icons">
                   delete
                 </i>
@@ -88,7 +88,7 @@
         <mat-icon matSuffix>phone</mat-icon>
         <mat-hint>Inclua o DDD </mat-hint>
       </mat-form-field>
-      <button class="btn btn-green" mat-raised-button (click)="adicionarAoArray(input.value)">
+      <button class="btn-add" mat-raised-button (click)="adicionarAoArray(input.value)">
         <i class="material-icons">
           add
         </i>
@@ -102,7 +102,7 @@
                 <mat-label>Email</mat-label>
                 <input matInput type="email" formControlName="endereco" email readonly />
               </mat-form-field>
-              <button class="btn btn-red" mat-raised-button (click)="removeEmail(indiceEmail.valueOf())">
+              <button class="btn-delete" mat-raised-button (click)="removeEmail(indiceEmail.valueOf())">
                 <i class="material-icons">
                   delete
                 </i>
@@ -118,7 +118,7 @@
         <input #inputEmail matInput type="email" name="teste" formControlName="teste" placeholder="janedoe@email.com"
           email />
       </mat-form-field>
-      <button class="btn btn-green" [disabled]="clienteFormGroup.value.teste.valid" mat-raised-button
+      <button class="btn-add" [disabled]="clienteFormGroup.value.teste.valid" mat-raised-button
         (click)="adicionarAoArrayEmail(inputEmail.value)">
         <i class="material-icons">
           add
@@ -127,11 +127,11 @@
 
     </div>
   </form>
-  <div class="buttons">
-    <button class="btn btn-green" [disabled]="!clienteFormGroup.valid" mat-raised-button (click)="save()">
+  <div class="submit-buttons">
+    <button class="btn-save" [disabled]="!clienteFormGroup.valid" mat-raised-button (click)="save()">
       Salvar
     </button>
-    <button class="btn btn-red" mat-raised-button (click)="cancel()">
+    <button class="btn-cancel" mat-raised-button (click)="cancel()">
       Cancelar
     </button>
   </div>

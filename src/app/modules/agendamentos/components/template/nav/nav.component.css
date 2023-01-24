@@ -1,30 +1,22 @@
 mat-sidenav-container {
-    background-color: #ff9441;
-}
-
-html{
-    margin-top:0;
-    padding-top:0;
-}
-body{
-    margin-top:0;
-    padding-top:0;
+  background-color: #ff9441;
 }
 
 .sidenav {
-    background-color: #ff9441;
+  background-color: #ff9441;
 }
-
-.sidenav i{
-    color: #000;
+.sidenav i {
+  color: rgb(18, 18, 18);
 }
-
 .sidenav a:hover,
-.sidenav a.active{
-background-color: #ffd57b;
+.sidenav a.active {
+  background-color: #ffd57b;
+  border-radius: 10px;
 }
 
 .content {
-    background-color: #ffd57b;
-    padding: 1rem;
+  background-color: #ffd57b;
+  padding: 1rem;
 }
+
+/*# sourceMappingURL=nav.component.css.map */

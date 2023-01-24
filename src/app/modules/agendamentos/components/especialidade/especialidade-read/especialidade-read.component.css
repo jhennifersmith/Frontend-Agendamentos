@@ -1,34 +1,109 @@
-.buttons button {
-    margin-bottom: 1rem;
-    background-color: #ff9441;
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+.submit-buttons {
+  padding-left: 1.3rem;
+}
+.submit-buttons button {
+  padding: 1rem;
+  margin-left: 1rem;
+}
+.submit-buttons .btn-save {
+  background-color: #e6ac5a;
+}
+.submit-buttons .btn-save:hover {
+  background-color: #e19a37;
+  transition: all 0.3s ease;
+}
+.submit-buttons .btn-save:active {
+  background-color: #a76c19;
+}
+.submit-buttons .btn-cancel {
+  background-color: #e63900;
+}
+.submit-buttons .btn-cancel:hover {
+  background-color: #bd2f00;
+  transition: all 0.3s ease;
+}
+.submit-buttons .btn-cancel:active {
+  background-color: #671900;
 }
 
-mat-card {
-    padding: 1rem;
-    background-color: #FAFFBD;
-    margin-bottom: 1rem;
+.search-buttons {
+  padding-left: 1.3rem;
+}
+.search-buttons button {
+  padding: 1rem;
+  margin-left: 1rem;
+}
+.search-buttons .btn-search {
+  background-color: #e6ac5a;
+}
+.search-buttons .btn-search:hover {
+  background-color: #e19a37;
+  transition: all 0.3s ease;
+}
+.search-buttons .btn-search:active {
+  background-color: #a76c19;
+}
+.search-buttons .btn-create {
+  background-color: #41a47b;
+}
+.search-buttons .btn-create:hover {
+  background-color: #358765;
+  transition: all 0.3s ease;
+}
+.search-buttons .btn-create:active {
+  background-color: #1d4937;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
+.btn-add {
+  background-color: #41a47b;
+}
+.btn-add:hover {
+  background-color: #358765;
+  transition: all 0.3s ease;
+}
+.btn-add:active {
+  background-color: #1d4937;
 }
 
-.mat-elevation-z4 {
-    background-color: #ff9441;
+.btn-delete {
+  background-color: #e63900;
 }
-.material-icons {
-    color: #de5239;
+.btn-delete:hover {
+  background-color: #bd2f00;
+  transition: all 0.3s ease;
 }
+.btn-delete:active {
+  background-color: #671900;
+}
+
 .mat-elevation-z4 table {
-    background-color: #ffad52;
+  font-family: "Poppins";
+  background-color: #e6ac5a;
 }
-
-.mat-elevation-z4 table th{
-    background-color: #ff9441;
+.mat-elevation-z4 table th {
+  font-family: "Poppins";
+  background-color: rgb(18, 18, 18);
+  color: #fff;
+}
+.mat-elevation-z4 table td {
+  font-family: "Poppins";
+  border-top: 0.2px solid rgb(18, 18, 18);
+}
+.mat-elevation-z4 table td:not(:first-child) {
+  border-left: 0.2px solid rgb(18, 18, 18);
+}
+.mat-elevation-z4 table .material-icons {
+  color: #e63900;
 }
 
 mat-paginator {
-    background-color: #ff9441;
+  font-family: "Poppins";
+  background-color: #ff9441;
 }
+
+.btn-create {
+  margin-bottom: 1rem;
+}
+
+/*# sourceMappingURL=especialidade-read.component.css.map */
